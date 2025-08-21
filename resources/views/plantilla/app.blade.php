@@ -54,6 +54,7 @@
     <!--begin::Required Plugin(AdminLTE)-->
     <link rel="stylesheet" href="{{asset('css/adminlte.css')}}" />
     <!--end::Required Plugin(AdminLTE)-->
+    @stack('styles')
   </head>
   <!--end::Head-->
   <!--begin::Body-->
@@ -108,7 +109,7 @@
         <!--begin::Copyright-->
         <strong>
           Copyright &copy; 2014-2025&nbsp;
-          <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>.
+          <a href="https://adminlte.io" class="text-decoration-none">Destructor</a>.
         </strong>
         All rights reserved.
         <!--end::Copyright-->
@@ -157,6 +158,7 @@
     </script>
     <!--end::OverlayScrollbars Configure-->
     <!--end::Script-->
+    @stack('scripts')
   </body>
   <!--end::Body-->
 </html>
