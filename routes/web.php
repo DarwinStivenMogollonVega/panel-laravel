@@ -10,6 +10,10 @@ Route::get('/', function () {
     //return view('plantilla.app');
 //});
 
-Route::get('/usuario', function () {
+Route::get('/app', function () {
     return view('usuario.index');
+});
+
+Route::get('/action', function () {
+    return view('usuario.action');
 });
