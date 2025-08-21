@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "5f719dfe0177de4188ee4d7d4f1e209a",
+=======
+    "content-hash": "88970a0117c062eed55fa8728fc43833",
+>>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
     "packages": [
         {
             "name": "brick/math",
@@ -3275,6 +3279,7 @@
             "time": "2025-06-25T14:20:11+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "spatie/laravel-permission",
             "version": "6.21.0",
             "source": {
@@ -3358,6 +3363,8 @@
             "time": "2025-07-23T16:08:05+00:00"
         },
         {
+=======
+>>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
             "name": "symfony/clock",
             "version": "v7.3.0",
             "source": {

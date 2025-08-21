@@ -3,7 +3,11 @@
   <!--begin::Head-->
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<<<<<<< HEAD
     <title>Panel | Administracion</title>
+=======
+    <title>Panel | Administración </title>
+>>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
     <!--begin::Accessibility Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <meta name="color-scheme" content="light dark" />
@@ -11,6 +15,7 @@
     <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)" />
     <!--end::Accessibility Meta Tags-->
     <!--begin::Primary Meta Tags-->
+<<<<<<< HEAD
     <meta name="title" content="Panel | Administracion" />
     <meta name="author" content="ColorlibHQ" />
     <meta
@@ -20,12 +25,27 @@
     <meta
       name="keywords"
       content="panel, administracion, mamapinga"
+=======
+    <meta name="title" content="Panel | Administración " />
+    <meta name="author" content="ColorlibHQ" />
+    <meta
+      name="description"
+      content="Panel de administración del sistema."
+    />
+    <meta
+      name="keywords"
+      content="panel, administracion, MrBrianApp"
+>>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
     />
     <!--end::Primary Meta Tags-->
     <!--begin::Accessibility Features-->
     <!-- Skip links will be dynamically added by accessibility.js -->
     <meta name="supported-color-schemes" content="light dark" />
+<<<<<<< HEAD
     <link rel="preload" href="{{ asset('css/adminlte.min.css')}}" as="style" />
+=======
+    <link rel="preload" href="{{asset('css/adminlte.css')}}" as="style" />
+>>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
     <!--end::Accessibility Features-->
     <!--begin::Fonts-->
     <link
@@ -52,9 +72,15 @@
     />
     <!--end::Third Party Plugin(Bootstrap Icons)-->
     <!--begin::Required Plugin(AdminLTE)-->
+<<<<<<< HEAD
     <link rel="stylesheet" href="{{asset('css/adminlte.css')}}" />
     <!--end::Required Plugin(AdminLTE)-->
     @stack('styles')
+=======
+    <link rel="stylesheet" href="{{asset('/css/adminlte.css')}}" />
+    <!--end::Required Plugin(AdminLTE)-->
+    @stack('css')
+>>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
   </head>
   <!--end::Head-->
   <!--begin::Body-->
@@ -62,11 +88,21 @@
     <!--begin::App Wrapper-->
     <div class="app-wrapper">
       <!--begin::Header-->
+<<<<<<< HEAD
       <!--end::Header-->
       @include('plantilla.header')
       <!--begin::Sidebar-->
       <!--end::Sidebar-->
       @include('plantilla.menu')
+=======
+
+      @include('plantilla.header')
+      <!--end::Header-->
+      <!--begin::Sidebar-->
+      @include('plantilla.menu')
+
+      <!--end::Sidebar-->
+>>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
       <!--begin::App Main-->
       <main class="app-main">
         <!--begin::App Content Header-->
@@ -74,10 +110,25 @@
           <!--begin::Container-->
           <div class="container-fluid">
             <!--begin::Row-->
+<<<<<<< HEAD
+=======
+            <div class="row">
+              <div class="col-sm-6"><h3 class="mb-0">Simple Tables</h3></div>
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-end">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Simple Tables</li>
+                </ol>
+              </div>
+            </div>
+            <!--end::Row-->
+          </div>
+>>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
           <!--end::Container-->
         </div>
         <!--end::App Content Header-->
         <!--begin::App Content-->
+<<<<<<< HEAD
       @yield('contenido')
           <!--begin::Container-->
           <div class="container-fluid">
@@ -88,6 +139,14 @@
                   <div class="card-header">
                     <h3 class="card-title
         <--end::App Content-->
+=======
+
+        @yield('contenido')
+
+        
+
+        <!--end::App Content-->
+>>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
       </main>
       <!--end::App Main-->
       <!--begin::Footer-->
@@ -98,7 +157,11 @@
         <!--begin::Copyright-->
         <strong>
           Copyright &copy; 2014-2025&nbsp;
+<<<<<<< HEAD
           <a href="https://adminlte.io" class="text-decoration-none">Destructor</a>.
+=======
+          <a href="#" class="text-decoration-none">MrBrianApp</a>.
+>>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
         </strong>
         All rights reserved.
         <!--end::Copyright-->
@@ -146,6 +209,10 @@
       });
     </script>
     <!--end::OverlayScrollbars Configure-->
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
     <!--end::Script-->
     @stack('scripts')
   </body>

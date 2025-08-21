@@ -11,8 +11,12 @@
     "require": {
         "php": "^8.2",
         "laravel/framework": "^12.0",
+<<<<<<< HEAD
         "laravel/tinker": "^2.10.1",
         "spatie/laravel-permission": "^6.21"
+=======
+        "laravel/tinker": "^2.10.1"
+>>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -77,4 +81,8 @@
     },
     "minimum-stability": "stable",
     "prefer-stable": true
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)

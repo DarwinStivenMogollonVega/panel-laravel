@@ -1,16 +1,20 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
+=======
+>>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
 // // Route::get('/app', function () {
 // //     return view('plantilla.app');
 
@@ -49,3 +53,18 @@ Route::get('login', function(){
     return view('autenticacion.login');})->name('login');
 Route::post('login', [AuthController::class, 'login'])->name('login.post');
 });
+=======
+// Route::get('/app', function () {
+//     return view('plantilla.app');
+// });
+
+Route::get('/app', function () {
+    return view('usuario.index');
+});
+
+Route::get('/action', function () {
+    return view('usuario.action');
+});
+
+
+>>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)

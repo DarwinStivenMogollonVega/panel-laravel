@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use Illuminate\Http\Request;
 
-class controller
+abstract class Controller
 {
-    
+    //
+>>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
 }
