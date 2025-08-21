@@ -24,7 +24,7 @@
                             </form>
                         </div>
 
-                        <div>
+                        <div class="table-responsive mt-3">
                             <table class="table table-bordered">
                                 <thead>
                                 <th style="width: 100px;">Opciones</th>
@@ -34,14 +34,23 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Delete, New</td>
+                                        <td>
+                                            <a href="#" class="btn btn-warning btn-sm">
+                                                <i class="bi bi-pencil-fill"></i>
+                                            </a>
+                                            <button class="btn btn-danger btn-sm" data-bs-target="#modal-eliminar-01" data-bs-toggle="modal">
+                                                <i class="bi bi-trash"></i>
+
+                                            </button> 
+                                        </td>
                                         <td>1</td>
                                         <td>Pepito Perez</td>
                                         <td>stivendarwinvegamogollon@gmail.com</td>
                                     </tr>
+                                    @include('usuario.delete')
                                 </tbody>
                             </table>
-                        </div>
+                        </div>               
                   <!-- /.card-body -->
                   <div class="card-footer clearfix">
                     <ul class="pagination pagination-sm m-0 float-end">
