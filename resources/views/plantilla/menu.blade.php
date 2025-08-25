@@ -49,8 +49,12 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-speedometer"></i>
                         <p>
+<<<<<<< HEAD
                             Dashboard
 >>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
+=======
+                            Seguridad
+>>>>>>> dba1577 (Se agrego la migracion de activo a users, se agrego paguinacion, y se eliminaron las rutas iniciales de prueba.)
                             <i class="nav-arrow bi bi-chevron-right"></i>
                         </p>
                     </a>
@@ -77,9 +81,9 @@
                 @endcanany            
 =======
                         <li class="nav-item">
-                            <a href="../index.html" class="nav-link">
+                            <a href="{{route('usuario.index')}}" class="nav-link">
                                 <i class="nav-icon bi bi-circle"></i>
-                                <p>Dashboard v1</p>
+                                <p>Usuarios</p>
                             </a>
                         </li>
                         <li class="nav-item">

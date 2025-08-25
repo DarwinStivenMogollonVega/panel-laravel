@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthController;
@@ -9,6 +10,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 =======
 >>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
+=======
+use  App\Http\Controllers\UserController;
+>>>>>>> dba1577 (Se agrego la migracion de activo a users, se agrego paguinacion, y se eliminaron las rutas iniciales de prueba.)
 
 Route::get('/', function () {
     return view('welcome');
@@ -58,13 +62,17 @@ Route::post('login', [AuthController::class, 'login'])->name('login.post');
 //     return view('plantilla.app');
 // });
 
-Route::get('/app', function () {
-    return view('usuario.index');
-});
+// Route::get('/app', function () {
+//     return view('usuario.index');
+// });
 
-Route::get('/action', function () {
-    return view('usuario.action');
-});
+// Route::get('/action', function () {
+//     return view('usuario.action');
+// });
 
 
+<<<<<<< HEAD
 >>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
+=======
+route::resource('usuario', UserController::class);
+>>>>>>> dba1577 (Se agrego la migracion de activo a users, se agrego paguinacion, y se eliminaron las rutas iniciales de prueba.)
