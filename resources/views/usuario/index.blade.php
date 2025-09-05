@@ -20,7 +20,7 @@
                     <button type="submit" class="btn btn-primary">
                       <i class="fas fa-search"></i>
                       Buscar</button>
-                    <a href="" class="btn btn-primary">Nuevo</a>
+                    <a href="{{route ('usuarios.create') }}" class="btn btn-primary">Nuevo</a>
                   </div>
                 </div>
               </form>
@@ -42,15 +42,13 @@
                     </tr>
                     @else
                     @foreach ($registros as $reg)
-
-
                     <tr>
                       <td>
-                        <a href="#" class="btn btn-warning btn-sm">
+                        <a href="{{ route('usuarios.edit') }}" class="btn btn-warning btn-sm">
                           <i class="bi bi-pencil-fill"></i>
                         </a>
                         <button class="btn btn-danger btn-sm" data-bs-target="#modal-eliminar-01" data-bs-toggle="modal">
-                          <i class="bi bi-trash"></i>
+                          <i class="bi bi-trash-fill"></i>
 
                         </button>
                       </td>

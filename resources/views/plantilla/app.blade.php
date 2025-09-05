@@ -98,7 +98,7 @@
                 <div class="card">
                   <div class="card-header">
                     <h3 class="card-title
-        <!--end::App Content-->
+        <--end::App Content-->
       </main>
       <!--end::App Main-->
       <!--begin::Footer-->
