@@ -40,7 +40,7 @@ class UserController extends Controller
         $registro->password =bcrypt ($request->input('password'));
         $registro->activo = $request->input('activo');
         $registro->save();
-        return redirect()->route('usuarios.index')->with('mensaje', 'registro');
+        return redirect()->route('usuarios.index')->with('mensaje',$registro->name.' Creado satisfactoriamente');
     }
 
     /**
@@ -72,14 +72,16 @@ class UserController extends Controller
         $registro->password=bcrypt($request->input('password'));
         $registro->activo = $request->input('activo');
         $registro->save();
-        return redirect()->route('usuarios.index')->with('mensaje', 'registro'.$registro->name.' Actualizado satisfactoriamente');
+        return redirect()->route('usuarios.index')->with('mensaje',$registro->name.' Actualizado satisfactoriamente '); 
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        //
+        $registro = User::findOrFail($id);
+        $registro->delete();
+        return redirect()->route('usuarios.index')->with('mensaje',' Eliminado exitosamente ');
     }
 }

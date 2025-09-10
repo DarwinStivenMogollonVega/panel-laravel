@@ -25,7 +25,11 @@
                 </div>
               </form>
             </div>
-
+            @if (Session::has('mensaje'))
+              <div class="alert alert-info alert-dismissible fade show mt-2">
+                {{ Session::get('mensaje') }}
+              </div>
+            @endif
             <div class="table-responsive mt-3">
               <table class="table table-bordered">
                 <thead>
@@ -47,7 +51,7 @@
                         <a href="{{ route('usuarios.edit', $reg->id) }}" class="btn btn-warning btn-sm">
                           <i class="bi bi-pencil-fill"></i>
                         </a>
-                        <button class="btn btn-danger btn-sm" data-bs-target="#modal-eliminar-01" data-bs-toggle="modal">
+                        <button class="btn btn-danger btn-sm" data-bs-target="#modal-eliminar-{{ $reg->id }}" data-bs-toggle="modal">
                           <i class="bi bi-trash-fill"></i>
 
                         </button>
