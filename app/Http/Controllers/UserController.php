@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -11,14 +10,15 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request )
+    public function index(Request $request)
     {
-        $texto = $request->input('texto');
-        $registros=User::where('name', 'like', '%'.$texto.'%')
-            ->orWhere('email', 'like', '%'.$texto.'%')
-            ->orderBy('id', 'desc')
+        $texto =$request->input('texto');
+        $registros=User::where('name','like','%'.$texto.'%')
+            ->orWhere('email','like','%'.$texto.'%')
+            ->orderBy('id','desc')
             ->paginate(10);
-            return view('usuario.index', compact('registros', 'texto'));
+            return view('usuario.index',compact('registros','texto'));
+
     }
 
     /**
@@ -34,13 +34,13 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
-        $registro = new User();
-        $registro->name = $request->input('name');
-        $registro->email = $request->input('email');
-        $registro->password =bcrypt ($request->input('password'));
-        $registro->activo = $request->input('activo');
+        $registro=new User();
+        $registro->name=$request->input('name');
+        $registro->email=$request->input('email');
+        $registro->password=bcrypt($request->input('password'));
+        $registro->activo=$request->input('activo');
         $registro->save();
-        return redirect()->route('usuarios.index')->with('mensaje',$registro->name.' Creado satisfactoriamente');
+        return redirect()->route('usuarios.index')->with('mensaje','registro');
     }
 
     /**
@@ -56,7 +56,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $registro = User::findOrFail($id);
+        $registro=User::findOrFail($id);
         return view('usuario.action', compact('registro'));
     }
 
@@ -65,14 +65,13 @@ class UserController extends Controller
      */
     public function update(UserRequest $request, $id)
     {
-        $registro = User::findOrFail($id);
-        $registro->name = $request->input('name');
-        $registro->email = $request->input('email');
-        $registro->email = $request->input('email');
+        $registro=User::findOrFail($id);
+        $registro->name=$request->input('name');
+        $registro->email=$request->input('email');
         $registro->password=bcrypt($request->input('password'));
-        $registro->activo = $request->input('activo');
+        $registro->activo=$request->input('activo');
         $registro->save();
-        return redirect()->route('usuarios.index')->with('mensaje',$registro->name.' Actualizado satisfactoriamente '); 
+        return redirect()->route('usuarios.index')->with('mensaje','registro '.$registro->name.' Actualizado satisfatoriamente ' );
     }
 
     /**
@@ -80,8 +79,17 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $registro = User::findOrFail($id);
+        $registro=User::findOrFail($id);
         $registro->delete();
-        return redirect()->route('usuarios.index')->with('mensaje',' Eliminado exitosamente ');
+        return redirect()->route('usuarios.index')->with('mensaje', $registro->name.' Eliminado satisfatoriamente ' );
+    }
+
+
+    public function toggleStatus(User $usuario)
+    {
+        $usuario->activo = !$usuario->activo;
+        $usuario->save();
+
+        return redirect()->route('usuarios.index')->with('mensaje', 'El estado del usuario '.$usuario->name.' ha sido actualizado satisfactoriamente.');
     }
 }
