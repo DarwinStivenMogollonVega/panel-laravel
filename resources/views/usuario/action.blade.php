@@ -1,5 +1,4 @@
 @extends('plantilla.app')
-
 @section('contenido')
     <div class="app-content">
         <div class="container-fluid">
