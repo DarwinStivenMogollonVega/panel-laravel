@@ -7,6 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Cliente;
 
 class RolesAndPermissionSeeder extends Seeder
 {
@@ -16,7 +17,7 @@ class RolesAndPermissionSeeder extends Seeder
     public function run(): void
     {
         $adminRole = Role::firstOrCreate(['name' => 'admin']);
-        $clienteRole = Role::firstOrCreate(['name' => 'user']);
+        $clienteRole = Role::firstOrCreate(['name' => 'cliente']);
 
         //Definir permisos 
         $adminPermissions = [
@@ -60,7 +61,7 @@ class RolesAndPermissionSeeder extends Seeder
 
         $clienteUser = User::firstOrCreate(
             ['email' => 'cliente@prueba.com'],
-            ['name' => 'Admin', 'password' => bcrypt('admin123456')]
+            ['name' => 'cliente', 'password' => bcrypt('cliente123456')]
         );
 
         $clienteUser ->assignRole($clienteRole);
