@@ -117,7 +117,7 @@ Route::middleware(['auth'])->group(function(){
 Route::middleware(['auth'])->group(function () {
 >>>>>>> f43cbde (Se actualizó el proyecto)
     Route::resource('usuarios', UserController::class);
-    Route::resourse('roles', RoleController::class);
+    Route::resource('roles', RoleController::class);
     Route::patch('usuarios/{usuario}/toggle', [UserController::class, 'toggleStatus'])->name('usuarios.toggle');
     Route::get('dashboard', function () {
         return view('dashboard');
