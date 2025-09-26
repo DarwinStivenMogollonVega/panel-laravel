@@ -3,15 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+
 
 class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $texto = $request->input('texto'); //Variable del texto de búsqueda
+        $registros=Role::with('permissions')->where('name', 'like', "%{$texto}")
+                            ->orderBy('id', 'desc')
+                            ->paginate(2);
+        return view('role.index', compact('registros', 'texto'));
     }
 
     /**
@@ -19,7 +26,8 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        $permissions = Permission::all();
+        return view('role.action', compact('permissions'));
     }
 
     /**
@@ -27,7 +35,13 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $registro=new Role();
+        $registro->name=$request->input('name');
+        $registro->email=$request->input('email');
+        $registro->password=bcrypt($request->input('password'));
+        $registro->activo=$request->input('activo');
+        $registro->save();
+        return redirect()->route('usuarios.index')->with('mensaje', 'registro');
     }
 
     /**

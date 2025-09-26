@@ -14,11 +14,7 @@
 
                         <div class="card-header ">
 
-                            <h3 class="card-title"> Usuarios </h3>
-
-                               
-
-                                
+                            <h3 class="card-title"> Roles </h3>                 
 
                         </div>
 
@@ -66,7 +62,7 @@
                                 </div>
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                     <button type="button" class="btn btn-secondary me-md-2"
-                                                                                onclick="window.location.href='{{ route('usuarios.index') }}'">Cancelar</button>
+                                                                                                                    onclick="window.location.href='{{ route('usuarios.index') }}'">Cancelar</button>
                                     <button type="submit" class="btn btn-primary">Guardar</button>
                                 </div>
                             </form>
