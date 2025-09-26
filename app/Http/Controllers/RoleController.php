@@ -35,13 +35,15 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        $registro=new Role();
-        $registro->name=$request->input('name');
-        $registro->email=$request->input('email');
-        $registro->password=bcrypt($request->input('password'));
-        $registro->activo=$request->input('activo');
-        $registro->save();
-        return redirect()->route('usuarios.index')->with('mensaje', 'registro');
+        $request->validate([
+            'name' => 'required|unique:roles,name',
+            'permissions' => 'required|array',
+        ]);
+
+        $registro = Role::create(['name' => $request->name]);
+        $registro->syncPermissions($request->permissions);
+
+        return redirect()->route('roles.index')->with('mensaje', 'Rol '.$registro->name.' creado exitosamente.');
     }
 
     /**
@@ -57,7 +59,10 @@ class RoleController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $registro = Role::findOrFail($id);
+        $permissions = Permission::all();
+
+        return view('role.action', compact('registro', 'permissions'));
     }
 
     /**
@@ -65,7 +70,14 @@ class RoleController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $registro = Role::findOrFail($id);
+        $request->validate([
+            'name' => 'required|unique:roles,name,'.$registro->id,
+            'permissions' => 'required|array',
+        ]);
+
+        $registro->update(['name' => $request->name]);
+        $registro->syncPermissions($request->permissions);
     }
 
     /**
@@ -73,6 +85,9 @@ class RoleController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $registro = Role::findOrFail($id);
+        $registro->delete();
+
+        return redirect()->route('roles.index')->with('mensaje', $registro->name.' eliminado exitosamente.');
     }
 }
