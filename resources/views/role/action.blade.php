@@ -20,7 +20,7 @@
 
                          <div class="card-body">
 
-                                <form action="{{ isset($registro)?route('usuarios.update', $registro->id) : route('usuarios.store') }}" method="POST" id="formRegistroUsuario">
+                                <form action="{{ isset($registro) ? route('roles.update', $registro->id) : route('roles.store') }}" method="POST" id="formRegistroRole">
                                     @csrf
                                     @if (isset($registro))
                                         @method('PUT')
@@ -34,35 +34,21 @@
                                         @enderror
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <label for="email" class="form-label">Email</label>
-                                        <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email', $registro->email ?? '') }}" required>
-                                        @error('email')
-                                            <small class="text-danger"> {{ $message }}</small>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="password" class="form-label">Password</label>
-                                        <input type="text" class="form-control @error('password') is-invalid @enderror" id="password" name="password" required>
-                                        @error('password')
-                                            <small class="text-danger"> {{ $message }}</small>
-                                        @enderror
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="estado" class="form-label">Estado</label>
-                                        <select class="form-select" name="activo" id="activo">
-                                            <option value="1" {{ old('activo', $registro->activo ?? '1') == '1' ? 'selected' : '' }}>Activo</option>
-                                            <option value="0" {{ old('activo', $registro->activo ?? '0') == '0' ? 'selected' : '' }} >Inactivo</option>
-                                        </select>
-                                        @error('activo')
-                                            <small class="text-danger"> {{ $message }}</small>
-                                        @enderror
+                                        <label class="form-label">Permisos:</label><br>
+                                        @foreach($permissions as $permission)
+                                        <div class="form-check">    
+                                        <input class="form-check-input" type="checkbox" name="permissions[]" value="{{ $permission->name }}"
+                                        id="permiso_{{ ($permission->id) }}" {{isset ($registro) && $registro->hasPermissionTo($permission->name)? 'checked' : ''}}></input>
+                                        <label for="permiso_{{ ($permission->id) }}" class="form-check-label">
+                                            {{ ucfirst($permission->name) }}
+                                        </label>
+                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                     <button type="button" class="btn btn-secondary me-md-2"
-                                                                                                                    onclick="window.location.href='{{ route('usuarios.index') }}'">Cancelar</button>
+                                    onclick="window.location.href='{{ route('roles.index') }}'">Cancelar</button>
                                     <button type="submit" class="btn btn-primary">Guardar</button>
                                 </div>
                             </form>
@@ -79,3 +65,9 @@
     </div>
 
 @endsection
+@push('scripts')
+<script>
+  document.getElementById('menuSeguridad').classList.add('menu-open');
+  document.getElementById('itemRole').classList.add('active');
+</script>
+@endpush

@@ -20,7 +20,9 @@
                     <button type="submit" class="btn btn-primary">
                       <i class="fas fa-search"></i>
                       Buscar</button>
+                      @can('user-create')
                     <a href="{{ route('usuarios.create')}}" class="btn btn-primary">Nuevo</a>
+                    @endcan
                   </div>
                 </div>
               </form>
@@ -46,16 +48,23 @@
                     </tr>
                     @else
                     @foreach ($registros as $reg)
-                    <tr>
+                    <tr class="aling-middle">
                       <td>
+                      @can('user-edit')
                         <a href="{{ route('usuarios.edit', $reg->id) }}" class="btn btn-info btn-sm">
                           <i class="bi bi-pencil-fill"></i>
                         </a>
+                      @endcan
+                      @can('user-delete')
                         <button class="btn btn-danger btn-sm" data-bs-target="#modal-eliminar-{{ $reg->id }}" data-bs-toggle="modal">
                           <i class="bi bi-trash-fill"></i>
                         </button>
+                      @endcan
+                      @can('user-activate')
                         <button class="btn {{ $reg->activo ? 'btn-success' : 'btn-warning' }} btn-sm" data-bs-target="#modal-toggle-{{ $reg->id }}" data-bs-toggle="modal">
                           <i class="bi {{ $reg->activo ? 'bi-check-circle' : 'bi-ban' }}"></i>
+                        </button>
+                      @endcan
                       </td>
                       <td>{{$reg -> id}}</td>
                       <td>{{$reg -> name}}</td>
@@ -64,8 +73,12 @@
                         <span class="badge {{ $reg->activo ? 'bg-success' : 'bg-danger'}}">{{$reg -> activo ? 'Activo' : 'Inactivo'}}</span>
                       </td>
                     </tr>
+                    @can('user-delete')
                     @include('usuario.delete')
+                    @endcan
+                    @can('user-activate')
                     @include('usuario.activate')
+                    @endcan
                     @endforeach
                     @endif
                 </tbody>
@@ -89,3 +102,10 @@
   </div>
 
   @endsection
+
+  @push('scripts')
+<script>
+  document.getElementById('menuSeguridad').classList.add('menu-open');
+  document.getElementById('itemUsuario').classList.add('active');
+</script>
+@endpush

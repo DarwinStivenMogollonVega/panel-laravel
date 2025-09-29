@@ -83,3 +83,9 @@
     </div>
 
 @endsection
+@push('scripts')
+<script>
+  document.getElementById('menuSeguridad').classList.add('menu-open');
+  document.getElementById('itemRole').classList.add('active');
+</script>
+@endpush
