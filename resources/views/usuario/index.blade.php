@@ -13,7 +13,7 @@
           <!-- /.card-header -->
           <div class="card-body">
             <div>
-              <form action="" method="get">
+              <form action="{{ route('usuarios.index')}}" method="get">
                 <div class="input-group">
                   <input name="texto" type="text" class="form-control" value="" placeholder="Ingrese texto a buscar">
                   <div class="input-group-append">
@@ -30,6 +30,9 @@
             @if (Session::has('mensaje'))
               <div class="alert alert-info alert-dismissible fade show mt-2">
                 {{ Session::get('mensaje') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+
+                </button>
               </div>
             @endif
             <div class="table-responsive mt-3">
@@ -39,6 +42,7 @@
                   <th style="width: 20px;">ID</th>
                   <th>Nombre</th>
                   <th>Correo</th>
+                  <th>Roles</th>
                   <th>Activo</th>
                 </thead>
                 <tbody>
@@ -70,6 +74,15 @@
                       <td>{{$reg -> name}}</td>
                       <td>{{$reg -> email}}</td>
                       <td>
+                        @if($reg->roles->isNotEmpty())
+                          <span class="badge bg-primary">
+                            {{$reg->roles->pluck('name')->implode('</span> <span class="badge bg-primary">') }}
+                          </span>
+                        @else
+                          <span class="badge bg-secondary">Sin Rol</span>
+                        @endif
+                      </td>
+                      <td>
                         <span class="badge {{ $reg->activo ? 'bg-success' : 'bg-danger'}}">{{$reg -> activo ? 'Activo' : 'Inactivo'}}</span>
                       </td>
                     </tr>
@@ -79,8 +92,8 @@
                     @can('user-activate')
                     @include('usuario.activate')
                     @endcan
-                    @endforeach
-                    @endif
+                  @endforeach
+                @endif
                 </tbody>
               </table>
             </div>

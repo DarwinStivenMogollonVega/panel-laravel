@@ -40,7 +40,7 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        $this->authorize('role-store');
+        $this->authorize('role-edit');
         $request->validate([
             'name' => 'required|unique:roles,name',
             'permissions' => 'required|array',
@@ -77,7 +77,7 @@ class RoleController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $this->authorize('role-update');
+        $this->authorize('role-edit');
         $registro = Role::findOrFail($id);
         $request->validate([
             'name' => 'required|unique:roles,name,'.$registro->id,
