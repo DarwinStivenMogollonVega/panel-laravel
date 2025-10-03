@@ -4,7 +4,7 @@
         <!--begin::Brand Link-->
         <a href="../index.html" class="brand-link">
             <!--begin::Brand Image-->
-            <img src="{{asset('assets/img/AdminLTELogo.png')}}" alt="AdminLTE Logo"
+            <img src="{{asset('img/AdminLTELogo.png')}}" alt="AdminLTELogo"
                 class="brand-image opacity-75 shadow" />
             <!--end::Brand Image-->
             <!--begin::Brand Text-->
@@ -20,15 +20,15 @@
             <!--begin::Sidebar Menu-->
             <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
-                    <a href="{{route('dashboard')}}" class="nav-link" id="mnuDashboard">
-                        <i class="nav-icon bi bi-speedometer"></i>
+                    <a href="{{route('dashboard')}}" class="nav-link" id="menuDashboard">
+                        <i class="nav-icon bi-speedometer"></i>
                         <p>
-                            Dashboard
+                            Panel de Control
                         </p>
                     </a>
                 </li>
-                @canany(['user-list', 'rol-list'])
-                <li class="nav-item" id="mnuSeguridad">
+                @canany(['user-list', 'role-list'])
+                <li class="nav-item" id="menuSeguridad">
                     <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-speedometer"></i>
                         <p>

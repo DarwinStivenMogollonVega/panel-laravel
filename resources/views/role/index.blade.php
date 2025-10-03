@@ -20,7 +20,7 @@
                     <button type="submit" class="btn btn-primary">
                       <i class="fas fa-search"></i>
                       Buscar</button>
-                      @can('role-create')
+                      @can('rol-create')
                     <a href="{{ route('roles.create')}}" class="btn btn-primary">Nuevo</a>
                     @endcan
                   </div>

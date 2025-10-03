@@ -16,7 +16,7 @@ class RoleController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('role-list');
+        $this->authorize('rol-list');
         $texto = $request->input('texto'); //Variable del texto de búsqueda
         $registros=Role::with('permissions')->where('name', 'like', "%{$texto}")
                             ->orderBy('id', 'desc')
@@ -29,7 +29,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        $this->authorize('role-create');
+        $this->authorize('rol-create');
         $permissions = Permission::all();
 
         return view('role.action', compact('permissions'));
@@ -40,7 +40,7 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        $this->authorize('role-edit');
+        $this->authorize('rol-edit');
         $request->validate([
             'name' => 'required|unique:roles,name',
             'permissions' => 'required|array',
@@ -65,7 +65,7 @@ class RoleController extends Controller
      */
     public function edit(string $id)
     {
-        $this->authorize('role-edit');
+        $this->authorize('rol-edit');
         $registro = Role::findOrFail($id);
         $permissions = Permission::all();
 
@@ -77,7 +77,7 @@ class RoleController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $this->authorize('role-edit');
+        $this->authorize('rol-edit');
         $registro = Role::findOrFail($id);
         $request->validate([
             'name' => 'required|unique:roles,name,'.$registro->id,
@@ -94,7 +94,7 @@ class RoleController extends Controller
      */
     public function destroy(string $id)
     {
-        $this->authorize('role-delete');
+        $this->authorize('rol-delete');
         $registro = Role::findOrFail($id);
         $registro->delete();
 
