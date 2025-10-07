@@ -22,12 +22,16 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Auth;
 >>>>>>> 1ac5a25 (Se agrego las rutas privadas, y se agrego el modulo de dashboard)
 
 >>>>>>> 3f907fb (Se actualizo el proyecto para estar al dia)
 =======
 >>>>>>> f43cbde (Se actualizó el proyecto)
+=======
+use Illuminate\Support\Facades\Auth;
+>>>>>>> 1b5379f (Rutas)
 
 Route::get('/', function () {
     return view('welcome');
