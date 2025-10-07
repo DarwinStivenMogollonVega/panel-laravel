@@ -12,6 +12,7 @@
     <!--end::Accessibility Meta Tags-->
     <!--begin::Primary Meta Tags-->
     <meta name="title" content="Sistema | Login" />
+<<<<<<< HEAD
     <meta name="author" content="Darwin" />
     <meta
       name="description"
@@ -20,12 +21,26 @@
     <meta
       name="keywords"
       content="Sistema, Darwin, prismalauncher"
+=======
+    <meta name="author" content="Bryan Vergel" />
+    <meta
+      name="description"
+      content="Panel de control de mi sistemaen laravel."
+    />
+    <meta
+      name="keywords"
+      content="Sistema, BrayanVega, codeart"
+>>>>>>> 1ac5a25 (Se agrego las rutas privadas, y se agrego el modulo de dashboard)
     />
     <!--end::Primary Meta Tags-->
     <!--begin::Accessibility Features-->
     <!-- Skip links will be dynamically added by accessibility.js -->
     <meta name="supported-color-schemes" content="light dark" />
+<<<<<<< HEAD
     <link rel="preload" href="{{ asset('css/adminlte.css') }}" as="style" />
+=======
+    <link rel="preload" href="{{asset('css/adminlte.css')}}" as="style" />
+>>>>>>> 1ac5a25 (Se agrego las rutas privadas, y se agrego el modulo de dashboard)
     <!--end::Accessibility Features-->
     <!--begin::Fonts-->
     <link
@@ -52,7 +67,11 @@
     />
     <!--end::Third Party Plugin(Bootstrap Icons)-->
     <!--begin::Required Plugin(AdminLTE)-->
+<<<<<<< HEAD
     <link rel="stylesheet" href="{{ asset('css/adminlte.css') }}" />
+=======
+    <link rel="stylesheet" href="{{asset('css/adminlte.css')}}" />
+>>>>>>> 1ac5a25 (Se agrego las rutas privadas, y se agrego el modulo de dashboard)
     <!--end::Required Plugin(AdminLTE)-->
   </head>
   <!--end::Head-->
@@ -70,6 +89,7 @@
         </div>
         <div class="card-body login-card-body">
           <p class="login-box-msg">Ingrese sus credenciales</p>
+<<<<<<< HEAD
         @if (session('error'))
           <div class="alert alert-danger">
               {{ session('error') }}
@@ -80,18 +100,40 @@
             <div class="input-group mb-1">
               <div class="form-floating">
                 <input id="loginEmail" type="email" name="email" class="form-control" value="" placeholder="" />
+=======
+          @if(session('error'))
+            <div class="alert alert-danger">
+                {{session('error')}}
+            </div>
+
+          @endif
+
+          <form action="{{route('login.post')}}" method="post">
+            @csrf
+            <div class="input-group mb-1">
+              <div class="form-floating">
+                <input id="loginEmail" type="email" name="email"class="form-control" value="" placeholder="" />
+>>>>>>> 1ac5a25 (Se agrego las rutas privadas, y se agrego el modulo de dashboard)
                 <label for="loginEmail">Email</label>
               </div>
               <div class="input-group-text"><span class="bi bi-envelope"></span></div>
             </div>
             <div class="input-group mb-1">
               <div class="form-floating">
+<<<<<<< HEAD
                 <input id="loginPassword" type="password" name="password" class="form-control" placeholder="" />
+=======
+                <input id="loginPassword" type="password" name="password"class="form-control" placeholder="" />
+>>>>>>> 1ac5a25 (Se agrego las rutas privadas, y se agrego el modulo de dashboard)
                 <label for="loginPassword">Password</label>
               </div>
               <div class="input-group-text"><span class="bi bi-lock-fill"></span></div>
             </div>
             <!--begin::Row-->
+<<<<<<< HEAD
+=======
+            <div class="row">
+>>>>>>> 1ac5a25 (Se agrego las rutas privadas, y se agrego el modulo de dashboard)
               <!-- /.col -->
               <div class="col-4">
                 <div class="d-grid gap-2">
@@ -102,7 +144,12 @@
             </div>
             <!--end::Row-->
           </form>
+<<<<<<< HEAD
           
+=======
+          <!-- /.social-auth-links -->
+        </div>
+>>>>>>> 1ac5a25 (Se agrego las rutas privadas, y se agrego el modulo de dashboard)
         <!-- /.login-card-body -->
       </div>
     </div>

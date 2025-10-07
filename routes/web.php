@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthController;
@@ -16,6 +17,12 @@ use  App\Http\Controllers\UserController;
 >>>>>>> dba1577 (Se agrego la migracion de activo a users, se agrego paguinacion, y se eliminaron las rutas iniciales de prueba.)
 =======
 use App\Http\Controllers\UserController;
+=======
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\UserController; 
+use App\Http\Controllers\AuthController;
+use Illuminate\Support\Facades\Auth;
+>>>>>>> 1ac5a25 (Se agrego las rutas privadas, y se agrego el modulo de dashboard)
 
 >>>>>>> 3f907fb (Se actualizo el proyecto para estar al dia)
 
@@ -23,6 +30,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -91,3 +99,23 @@ Route::resource('usuarios', UserController::class);
 
 Route::patch('usuarios/{usuario}/toggle', [UserController::class, 'toggleStatus'])->name('usuarios.toggle');
 >>>>>>> f19c625 (Se agrego el boton para actualziar el estado de los usuarios)
+=======
+Route::middleware(['auth'])->group(function(){
+    Route::resource('usuarios', UserController::class);
+    Route::patch('usuarios/{usuario}/toggle', [UserController::class, 'toggleStatus'])->name('usuarios.toggle');
+    Route::get('dashboard', function(){
+    return view('dashboard');
+})->name('dashboard');
+
+
+    Route::post('logout',function(){
+        Auth::logout();
+        return redirect('/login');
+    })->name('logout');
+});
+
+Route::middleware('guest')->group(function(){
+    Route::get('login', function(){ return view('autenticacion.login');})->name('login');
+    Route::post('login',[AuthController::class, 'login'])->name('login.post');
+});
+>>>>>>> 1ac5a25 (Se agrego las rutas privadas, y se agrego el modulo de dashboard)
