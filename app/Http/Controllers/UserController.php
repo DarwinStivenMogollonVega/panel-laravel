@@ -122,6 +122,7 @@ class UserController extends Controller
      * Show the form for editing the specified resource.
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function edit($id)
     {
         $this->authorize('user-edit');
@@ -134,11 +135,18 @@ class UserController extends Controller
     {
         //
 >>>>>>> dba1577 (Se agrego la migracion de activo a users, se agrego paguinacion, y se eliminaron las rutas iniciales de prueba.)
+=======
+    public function edit($id)
+    {
+        $registro=User::findOrFail($id);
+        return view('usuario.action',compact('registro'));
+>>>>>>> 776adef (Se agrego el modulo de update aun falta lo de contraseña xd)
     }
 
     /**
      * Update the specified resource in storage.
      */
+<<<<<<< HEAD
 <<<<<<< HEAD
     public function update(Request $request, $id)
     {
@@ -157,6 +165,19 @@ class UserController extends Controller
     {
         //
 >>>>>>> dba1577 (Se agrego la migracion de activo a users, se agrego paguinacion, y se eliminaron las rutas iniciales de prueba.)
+=======
+    public function update(UserRequest $request, $id)
+    {
+        $registro=User::findOrFail($id);
+        $registro->name=$request->input('name');
+        $registro->email=$request->input('email');
+        $registro->password=bcrypt($request->input('password'));
+        $registro->activo=$request->input('activo');
+        $registro->save();
+        return redirect()->route('usuarios.index')->with('mensaje','registro'.$registro->name.'Actualizado satisfactoriamente');
+
+
+>>>>>>> 776adef (Se agrego el modulo de update aun falta lo de contraseña xd)
     }
 
     /**
