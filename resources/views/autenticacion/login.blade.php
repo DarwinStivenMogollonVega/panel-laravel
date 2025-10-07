@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html lang="es">
   <!--begin::Head-->
@@ -123,13 +124,30 @@
 =======
           @if (session('error'))
 >>>>>>> 2958d9e (Se actualizo el proyecto)
+=======
+
+
+@extends('autenticacion.app')
+@section('titulo', 'Login')
+@section('contenido')
+<div class="card card-outline card-primary">
+    <div class="card-header">
+        <a href="../index2.html" class="link-dark text-center link-offset-2 link-opacity-100 link-opacity-50-hover">
+            <h1 class="mb-0"><b>Sistema</b>LTE</h1>
+        </a>
+    </div>
+    <div class="card-body login-card-body">
+        <p class="login-box-msg">Ingrese sus credenciales</p>
+        @if (session('error'))
+>>>>>>> e3e89d5 ( Se agrego la vista de registro y se agregaron validaciones para password)
             <div class="alert alert-danger">
                 {{ session('error') }}
             </div>
-          @endif
-          <form action="{{ route('login.post') }}" method="post">
-             @csrf
+        @endif
+        <form action="{{ route('login.post') }}" method="post">
+            @csrf
             <div class="input-group mb-1">
+<<<<<<< HEAD
               <div class="form-floating">
 <<<<<<< HEAD
                 <input id="loginEmail" type="email" name="email"class="form-control" value="" placeholder="" />
@@ -155,21 +173,44 @@
                 <label for="loginPassword">Password</label>
               </div>
               <div class="input-group-text"><span class="bi bi-lock-fill"></span></div>
+=======
+                <div class="form-floating">
+                    <input id="loginEmail" type="email" name="email" class="form-control" value=""
+                        placeholder="" />
+                    <label for="loginEmail">Email</label>
+                </div>
+                <div class="input-group-text"><span class="bi bi-envelope"></span></div>
+            </div>
+            <div class="input-group mb-1">
+                <div class="form-floating">
+                    <input id="loginPassword" type="password" name="password" class="form-control" placeholder="" />
+                    <label for="loginPassword">Password</label>
+                </div>
+                <div class="input-group-text"><span class="bi bi-lock-fill"></span></div>
+>>>>>>> e3e89d5 ( Se agrego la vista de registro y se agregaron validaciones para password)
             </div>
             <!--begin::Row-->
 <<<<<<< HEAD
 =======
             <div class="row">
+<<<<<<< HEAD
 >>>>>>> 1ac5a25 (Se agrego las rutas privadas, y se agrego el modulo de dashboard)
               <!-- /.col -->
               <div class="col-4">
                 <div class="d-grid gap-2">
                   <button type="submit" class="btn btn-primary">Sign In</button>
+=======
+                <!-- /.col -->
+                <div class="col-4">
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Sign In</button>
+                    </div>
+>>>>>>> e3e89d5 ( Se agrego la vista de registro y se agregaron validaciones para password)
                 </div>
-              </div>
-              <!-- /.col -->
+                <!-- /.col -->
             </div>
             <!--end::Row-->
+<<<<<<< HEAD
           </form>
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -182,48 +223,11 @@
 >>>>>>> 1ac5a25 (Se agrego las rutas privadas, y se agrego el modulo de dashboard)
         <!-- /.login-card-body -->
       </div>
+=======
+        </form>
+>>>>>>> e3e89d5 ( Se agrego la vista de registro y se agregaron validaciones para password)
     </div>
-    <!-- /.login-box -->
-    <!--begin::Third Party Plugin(OverlayScrollbars)-->
-    <script
-      src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/browser/overlayscrollbars.browser.es6.min.js"
-      crossorigin="anonymous"
-    ></script>
-    <!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      crossorigin="anonymous"
-    ></script>
-    <!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
-      crossorigin="anonymous"
-    ></script>
-    <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
-    <script src="../js/adminlte.js"></script>
-    <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
-    <script>
-      const SELECTOR_SIDEBAR_WRAPPER = '.sidebar-wrapper';
-      const Default = {
-        scrollbarTheme: 'os-theme-light',
-        scrollbarAutoHide: 'leave',
-        scrollbarClickScroll: true,
-      };
-      document.addEventListener('DOMContentLoaded', function () {
-        const sidebarWrapper = document.querySelector(SELECTOR_SIDEBAR_WRAPPER);
-        if (sidebarWrapper && OverlayScrollbarsGlobal?.OverlayScrollbars !== undefined) {
-          OverlayScrollbarsGlobal.OverlayScrollbars(sidebarWrapper, {
-            scrollbars: {
-              theme: Default.scrollbarTheme,
-              autoHide: Default.scrollbarAutoHide,
-              clickScroll: Default.scrollbarClickScroll,
-            },
-          });
-        }
-      });
-    </script>
-    <!--end::OverlayScrollbars Configure-->
-    <!--end::Script-->
-  </body>
-  <!--end::Body-->
-</html>
+    <!-- /.login-card-body -->
+</div>
+
+@endsection

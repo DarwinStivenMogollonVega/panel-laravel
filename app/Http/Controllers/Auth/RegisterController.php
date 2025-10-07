@@ -49,7 +49,7 @@ class RegisterController extends Controller
     {
         return view('autenticacion.registro');
     }
-    public function Registration(UserRequest $request){
+    public function registration(UserRequest $request){
         $user =User::create([
             'name'=> $request->input('name'),
             'email'=> $request->input('email'),
@@ -57,9 +57,9 @@ class RegisterController extends Controller
             'activo'=> 1, //activado automaticamente
         ]);
 
-        $clientRole = Role::where('name', 'cliente')->fierst();
+        $clientRole = Role::where('name', 'cliente')->first();
         if($clientRole){
-            $user->assingRole($clientRole);
+            $user->assignRole($clientRole);
         }
         Auth::login($user);
 

@@ -55,6 +55,7 @@
                         <!-- /.card-header -->
                         <div class="card-body">
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                         </div>
                         <!-- /.card-body -->
@@ -77,6 +78,17 @@
                     <div class="card-body">
 =======
 >>>>>>> 2958d9e (Se actualizo el proyecto)
+=======
+                            @if (@Session::has('mensaje'))
+                                <div class="alert alert-info alert-dismissible fade show mt-2">
+                                    {{Session::get('mensaje')}}
+                                    <button type="button" class="btn-close" data-dismiss="alert" aria-label="close">
+
+                                    </button>
+
+                                </div>
+                            @endif
+>>>>>>> e3e89d5 ( Se agrego la vista de registro y se agregaron validaciones para password)
 
                         </div>
                         <!-- /.card-body -->

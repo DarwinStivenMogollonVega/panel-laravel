@@ -45,7 +45,7 @@ class UserRequest extends FormRequest
     }
 =======
             'email' => 'required|email|unique:users,email,' . $this->route('usuario'),
-            'password' => 'required|min:8',
+            'password' => 'required|min:8|confirmed',
         ];
     }
 <<<<<<< HEAD
@@ -65,6 +65,7 @@ class UserRequest extends FormRequest
 
             'password.required' => 'El campo contraseña es obligatorio.',
             'password.min' => 'La contraseña debe tener al menos 8 caracteres.',
+            'password.confirmed'=>'Las contraseñas no coiciden'
         ];
     }
 }

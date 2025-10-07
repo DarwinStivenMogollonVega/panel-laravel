@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -151,6 +152,13 @@ Route::middleware('guest')->group(function () {
     Route::post('login', [AuthController::class, 'login'])->name('login.post');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+    Route::get('/registro', [RegisterController::class, 'showRegisterForm'])->name('registro');
+    Route::post('/registro', [RegisterController::class, 'registration'])->name('registro.store');
+
+>>>>>>> e3e89d5 ( Se agrego la vista de registro y se agregaron validaciones para password)
 });
 <<<<<<< HEAD
 >>>>>>> f43cbde (Se actualizó el proyecto)
