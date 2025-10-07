@@ -5,10 +5,14 @@
         "This file is @generated automatically"
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
     "content-hash": "5f719dfe0177de4188ee4d7d4f1e209a",
 =======
     "content-hash": "88970a0117c062eed55fa8728fc43833",
 >>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
+=======
+    "content-hash": "5f719dfe0177de4188ee4d7d4f1e209a",
+>>>>>>> f43cbde (Se actualizó el proyecto)
     "packages": [
         {
             "name": "brick/math",
@@ -3280,6 +3284,9 @@
         },
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f43cbde (Se actualizó el proyecto)
             "name": "spatie/laravel-permission",
             "version": "6.21.0",
             "source": {
@@ -3363,8 +3370,11 @@
             "time": "2025-07-23T16:08:05+00:00"
         },
         {
+<<<<<<< HEAD
 =======
 >>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
+=======
+>>>>>>> f43cbde (Se actualizó el proyecto)
             "name": "symfony/clock",
             "version": "v7.3.0",
             "source": {

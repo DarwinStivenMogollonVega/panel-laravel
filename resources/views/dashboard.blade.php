@@ -54,7 +54,7 @@
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer clearfix">
-                            
+                           
                         </div>
                     </div>
                     <!-- /.card -->
@@ -71,7 +71,10 @@
 
 @push('scripts')
     <script>
-        /document.getElementById('mnuDashboard').classList.add('active');
+        // document.getElementById('mnuDashboard').classList.add('active');
     </script>
 @endpush
+<<<<<<< HEAD
 >>>>>>> 1ac5a25 (Se agrego las rutas privadas, y se agrego el modulo de dashboard)
+=======
+>>>>>>> f43cbde (Se actualizó el proyecto)

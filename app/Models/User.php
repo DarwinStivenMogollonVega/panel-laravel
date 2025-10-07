@@ -7,18 +7,26 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Spatie\Permission\Traits\HasRoles;
 =======
 >>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
+=======
+use Spatie\Permission\Traits\HasRoles;
+>>>>>>> f43cbde (Se actualizó el proyecto)
 
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
 <<<<<<< HEAD
+<<<<<<< HEAD
     use HasFactory, Notifiable, HasRoles;
 =======
     use HasFactory, Notifiable;
 >>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
+=======
+    use HasFactory, Notifiable, HasRoles;
+>>>>>>> f43cbde (Se actualizó el proyecto)
 
     /**
      * The attributes that are mass assignable.

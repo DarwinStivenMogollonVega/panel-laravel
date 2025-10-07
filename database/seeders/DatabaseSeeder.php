@@ -16,11 +16,15 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f43cbde (Se actualizó el proyecto)
         // User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
 
+<<<<<<< HEAD
         $this->call(RolesAndPermissionSeeder::class);
 =======
         User::factory()->create([
@@ -28,5 +32,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
 >>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
+=======
+        $this->call(RolesAndPermissionsSeeder::class);
+>>>>>>> f43cbde (Se actualizó el proyecto)
     }
 }
