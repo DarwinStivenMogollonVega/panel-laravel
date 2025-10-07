@@ -122,8 +122,12 @@ class UserController extends Controller
         $registro->password=bcrypt($request->input('password'));
         $registro->activo=$request->input('activo');
         $registro->save();
+<<<<<<< HEAD
         return redirect()->route('usuarios.index')->with('mensaje','registro');
 >>>>>>> df9aafc (Se arreglo los errores de la actualicion)
+=======
+        return redirect()->route('usuarios.index')->with('mensaje','Registro '.$registro->name. ' agregado correctamente');
+>>>>>>> edc20ff (Se agregaron roles al index de usaurio, le dimos permisos de can a admin y cliente y ahroa cliente no puede ver seguridad)
     }
 
     /**
@@ -197,6 +201,7 @@ class UserController extends Controller
         $registro->activo=$request->input('activo');
         $registro->save();
 <<<<<<< HEAD
+<<<<<<< HEAD
         return redirect()->route('usuarios.index')->with('mensaje','registro'
         .$registro->name.'Actualizado satisfactoriamente');
 
@@ -205,6 +210,9 @@ class UserController extends Controller
 =======
         return redirect()->route('usuarios.index')->with('mensaje','registro'.$registro->name.' Actualizado satisfatoriamente ' );
 >>>>>>> 2958d9e (Se actualizo el proyecto)
+=======
+        return redirect()->route('usuarios.index')->with('mensaje','Registro'.$registro->name.' actualizado satisfatoriamente ' );
+>>>>>>> edc20ff (Se agregaron roles al index de usaurio, le dimos permisos de can a admin y cliente y ahroa cliente no puede ver seguridad)
     }
 
     /**
