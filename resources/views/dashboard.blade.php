@@ -1,6 +1,7 @@
 @extends('plantilla.app')
 @section('contenido')
 <<<<<<< HEAD
+<<<<<<< HEAD
 <div class="app-content">
   <!--begin::Container-->
   <div class="container-fluid">
@@ -56,20 +57,41 @@
                         <div class="card-footer clearfix">
                            
                         </div>
+=======
+<div class="app-content">
+    <!--begin::Container-->
+    <div class="container-fluid">
+        <!--begin::Row-->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h3 class="card-title">Dashboard</h3>
+>>>>>>> 3197f29 (Se actualizó y arreglo rutas)
                     </div>
-                    <!-- /.card -->
+                    <!-- /.card-header -->
+                    <div class="card-body">
 
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer clearfix">
+
+                    </div>
                 </div>
-                <!-- /.col -->
+                <!-- /.card -->
 
             </div>
-            <!--end::Row-->
+            <!-- /.col -->
+
         </div>
-        <!--end::Container-->
+        <!--end::Row-->
     </div>
+    <!--end::Container-->
+</div>
 @endsection
 
 @push('scripts')
+<<<<<<< HEAD
     <script>
         // document.getElementById('mnuDashboard').classList.add('active');
     </script>
@@ -78,3 +100,9 @@
 >>>>>>> 1ac5a25 (Se agrego las rutas privadas, y se agrego el modulo de dashboard)
 =======
 >>>>>>> f43cbde (Se actualizó el proyecto)
+=======
+<script>
+    // document.getElementById('mnuDashboard').classList.add('active');
+</script>
+@endpush
+>>>>>>> 3197f29 (Se actualizó y arreglo rutas)

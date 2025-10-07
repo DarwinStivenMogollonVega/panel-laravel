@@ -110,11 +110,13 @@ Route::middleware(['auth'])->group(function () {
 >>>>>>> f43cbde (Se actualizó el proyecto)
     Route::resource('usuarios', UserController::class);
     Route::patch('usuarios/{usuario}/toggle', [UserController::class, 'toggleStatus'])->name('usuarios.toggle');
-    Route::get('dashboard', function () { return view('dashboard');})->name('dashboard');
+    Route::get('dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
     //segunda parte logout
-    Route::post('logout', function (){
-     Auth::logout();
-     return redirect('/login');
+    Route::post('logout', function () {
+        Auth::logout();
+        return redirect('/login');
     })->name('logout');
 });
 
@@ -126,7 +128,12 @@ Route::middleware('guest')->group(function(){
 >>>>>>> 1ac5a25 (Se agrego las rutas privadas, y se agrego el modulo de dashboard)
 =======
 Route::middleware('guest')->group(function () {
-    Route::get('login', function () { return view('autenticacion.login');})->name('login');
+    Route::get('login', function () {
+        return view('autenticacion.login');
+    })->name('login');
     Route::post('login', [AuthController::class, 'login'])->name('login.post');
 });
+<<<<<<< HEAD
 >>>>>>> f43cbde (Se actualizó el proyecto)
+=======
+>>>>>>> 3197f29 (Se actualizó y arreglo rutas)
