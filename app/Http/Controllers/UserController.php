@@ -184,6 +184,7 @@ class UserController extends Controller
      * Remove the specified resource from storage.
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function destroy($id)
     {
         $this->authorize('user-delete');
@@ -201,8 +202,13 @@ class UserController extends Controller
 }
 =======
     public function destroy(User $user)
+=======
+    public function destroy( $id)
+>>>>>>> c34d9cb (Se agrego el modulo o la funcion de delete)
     {
-        //
+        $registro=User::findOrFail($id);
+        $registro->delete();
+        return redirect()->route('usuarios.index')->with('mensaje', $registro->name.' Fue eliminado satisfactoriamente');
     }
 <<<<<<< HEAD
 }
