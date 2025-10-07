@@ -133,6 +133,7 @@
         <div class="app-content-header">
           <!--begin::Container-->
           <div class="container-fluid">
+<<<<<<< HEAD
             <!--begin::Row-->
 <<<<<<< HEAD
 =======
@@ -146,6 +147,9 @@
               </div>
             </div>
             <!--end::Row-->
+=======
+
+>>>>>>> 2958d9e (Se actualizo el proyecto)
           </div>
 >>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
           <!--end::Container-->

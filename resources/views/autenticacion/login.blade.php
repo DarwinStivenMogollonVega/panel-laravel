@@ -11,6 +11,7 @@
     <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)" />
     <!--end::Accessibility Meta Tags-->
     <!--begin::Primary Meta Tags-->
+<<<<<<< HEAD
     <meta name="title" content="Sistema | Login" />
 <<<<<<< HEAD
     <meta name="author" content="Darwin" />
@@ -23,24 +24,36 @@
       content="Sistema, Darwin, prismalauncher"
 =======
     <meta name="author" content="Bryan Vergel" />
+=======
+    <meta name="title" content="Sistema | Login " />
+    <meta name="author" content="Carlos ABS" />
+>>>>>>> 2958d9e (Se actualizo el proyecto)
     <meta
       name="description"
-      content="Panel de control de mi sistemaen laravel."
+      content="Panel de control de mi sistema en Laravel."
     />
     <meta
       name="keywords"
+<<<<<<< HEAD
       content="Sistema, BrayanVega, codeart"
 >>>>>>> 1ac5a25 (Se agrego las rutas privadas, y se agrego el modulo de dashboard)
+=======
+      content="sistema, carlosabs, codeart"
+>>>>>>> 2958d9e (Se actualizo el proyecto)
     />
     <!--end::Primary Meta Tags-->
     <!--begin::Accessibility Features-->
     <!-- Skip links will be dynamically added by accessibility.js -->
     <meta name="supported-color-schemes" content="light dark" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <link rel="preload" href="{{ asset('css/adminlte.css') }}" as="style" />
 =======
     <link rel="preload" href="{{asset('css/adminlte.css')}}" as="style" />
 >>>>>>> 1ac5a25 (Se agrego las rutas privadas, y se agrego el modulo de dashboard)
+=======
+    <link rel="preload" href="{{ asset('css/adminlte.css') }}" as="style" />
+>>>>>>> 2958d9e (Se actualizo el proyecto)
     <!--end::Accessibility Features-->
     <!--begin::Fonts-->
     <link
@@ -68,10 +81,14 @@
     <!--end::Third Party Plugin(Bootstrap Icons)-->
     <!--begin::Required Plugin(AdminLTE)-->
 <<<<<<< HEAD
+<<<<<<< HEAD
     <link rel="stylesheet" href="{{ asset('css/adminlte.css') }}" />
 =======
     <link rel="stylesheet" href="{{asset('css/adminlte.css')}}" />
 >>>>>>> 1ac5a25 (Se agrego las rutas privadas, y se agrego el modulo de dashboard)
+=======
+    <link rel="stylesheet" href="{{ asset('css/adminlte.css') }}" />
+>>>>>>> 2958d9e (Se actualizo el proyecto)
     <!--end::Required Plugin(AdminLTE)-->
   </head>
   <!--end::Head-->
@@ -90,6 +107,7 @@
         <div class="card-body login-card-body">
           <p class="login-box-msg">Ingrese sus credenciales</p>
 <<<<<<< HEAD
+<<<<<<< HEAD
         @if (session('error'))
           <div class="alert alert-danger">
               {{ session('error') }}
@@ -102,18 +120,23 @@
                 <input id="loginEmail" type="email" name="email" class="form-control" value="" placeholder="" />
 =======
           @if(session('error'))
+=======
+          @if (session('error'))
+>>>>>>> 2958d9e (Se actualizo el proyecto)
             <div class="alert alert-danger">
-                {{session('error')}}
+                {{ session('error') }}
             </div>
-
           @endif
-
-          <form action="{{route('login.post')}}" method="post">
-            @csrf
+          <form action="{{ route('login.post') }}" method="post">
+             @csrf
             <div class="input-group mb-1">
               <div class="form-floating">
+<<<<<<< HEAD
                 <input id="loginEmail" type="email" name="email"class="form-control" value="" placeholder="" />
 >>>>>>> 1ac5a25 (Se agrego las rutas privadas, y se agrego el modulo de dashboard)
+=======
+                <input id="loginEmail" type="email" name="email" class="form-control" value="" placeholder="" />
+>>>>>>> 2958d9e (Se actualizo el proyecto)
                 <label for="loginEmail">Email</label>
               </div>
               <div class="input-group-text"><span class="bi bi-envelope"></span></div>
@@ -121,10 +144,14 @@
             <div class="input-group mb-1">
               <div class="form-floating">
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <input id="loginPassword" type="password" name="password" class="form-control" placeholder="" />
 =======
                 <input id="loginPassword" type="password" name="password"class="form-control" placeholder="" />
 >>>>>>> 1ac5a25 (Se agrego las rutas privadas, y se agrego el modulo de dashboard)
+=======
+                <input id="loginPassword" type="password" name="password" class="form-control" placeholder="" />
+>>>>>>> 2958d9e (Se actualizo el proyecto)
                 <label for="loginPassword">Password</label>
               </div>
               <div class="input-group-text"><span class="bi bi-lock-fill"></span></div>
@@ -145,9 +172,12 @@
             <!--end::Row-->
           </form>
 <<<<<<< HEAD
+<<<<<<< HEAD
           
 =======
           <!-- /.social-auth-links -->
+=======
+>>>>>>> 2958d9e (Se actualizo el proyecto)
         </div>
 >>>>>>> 1ac5a25 (Se agrego las rutas privadas, y se agrego el modulo de dashboard)
         <!-- /.login-card-body -->

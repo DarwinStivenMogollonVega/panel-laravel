@@ -2,6 +2,7 @@
 @section('contenido')
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <div class="app-content">
   <!--begin::Container-->
   <div class="container-fluid">
@@ -39,6 +40,8 @@
     </script>
   @endpush
 =======
+=======
+>>>>>>> 2958d9e (Se actualizo el proyecto)
     <div class="app-content">
         <!--begin::Container-->
         <div class="container-fluid">
@@ -51,6 +54,7 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
+<<<<<<< HEAD
 
                         </div>
                         <!-- /.card-body -->
@@ -71,31 +75,37 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
+=======
+>>>>>>> 2958d9e (Se actualizo el proyecto)
 
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer clearfix">
+                           
+                        </div>
                     </div>
-                    <!-- /.card-body -->
-                    <div class="card-footer clearfix">
+                    <!-- /.card -->
 
-                    </div>
                 </div>
-                <!-- /.card -->
+                <!-- /.col -->
 
             </div>
-            <!-- /.col -->
-
+            <!--end::Row-->
         </div>
-        <!--end::Row-->
+        <!--end::Container-->
     </div>
-    <!--end::Container-->
-</div>
 @endsection
 
 @push('scripts')
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2958d9e (Se actualizo el proyecto)
     <script>
         // document.getElementById('mnuDashboard').classList.add('active');
     </script>
 @endpush
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 1ac5a25 (Se agrego las rutas privadas, y se agrego el modulo de dashboard)
 =======
@@ -106,3 +116,5 @@
 </script>
 @endpush
 >>>>>>> 3197f29 (Se actualizó y arreglo rutas)
+=======
+>>>>>>> 2958d9e (Se actualizo el proyecto)

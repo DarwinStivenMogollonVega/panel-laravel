@@ -139,8 +139,12 @@ class UserController extends Controller
     public function edit($id)
     {
         $registro=User::findOrFail($id);
+<<<<<<< HEAD
         return view('usuario.action',compact('registro'));
 >>>>>>> 776adef (Se agrego el modulo de update aun falta lo de contraseña xd)
+=======
+        return view('usuario.action', compact('registro'));
+>>>>>>> 2958d9e (Se actualizo el proyecto)
     }
 
     /**
@@ -174,16 +178,21 @@ class UserController extends Controller
         $registro->password=bcrypt($request->input('password'));
         $registro->activo=$request->input('activo');
         $registro->save();
+<<<<<<< HEAD
         return redirect()->route('usuarios.index')->with('mensaje','registro'
         .$registro->name.'Actualizado satisfactoriamente');
 
 
 >>>>>>> 776adef (Se agrego el modulo de update aun falta lo de contraseña xd)
+=======
+        return redirect()->route('usuarios.index')->with('mensaje','registro'.$registro->name.' Actualizado satisfatoriamente ' );
+>>>>>>> 2958d9e (Se actualizo el proyecto)
     }
 
     /**
      * Remove the specified resource from storage.
      */
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     public function destroy($id)
@@ -206,11 +215,13 @@ class UserController extends Controller
 =======
     public function destroy( $id)
 >>>>>>> c34d9cb (Se agrego el modulo o la funcion de delete)
+=======
+    public function destroy($id)
+>>>>>>> 2958d9e (Se actualizo el proyecto)
     {
         $registro=User::findOrFail($id);
         $registro->delete();
-        return redirect()->route('usuarios.index')->with('mensaje',
-         $registro->name.' Fue eliminado satisfactoriamente');
+        return redirect()->route('usuarios.index')->with('mensaje', $registro->name. ' eliminado satisfatoriamente.');
     }
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -222,10 +233,12 @@ class UserController extends Controller
 =======
 
     public function toggleStatus(User $usuario){
-        $usuario->activo=!$usuario->activo;
+        $usuario->activo = !$usuario->activo;
         $usuario->save();
-        return redirect()->route('usuarios.index') ->with('mensaje', 'El Estado del Usuario fue actualizado satisfactoriamente');
-
+        return redirect()->route('usuarios.index')->with('mensaje', 'El estado del usuario fue actualizado satisfactoriamente');
     }
 }
+<<<<<<< HEAD
 >>>>>>> f19c625 (Se agrego el boton para actualziar el estado de los usuarios)
+=======
+>>>>>>> 2958d9e (Se actualizo el proyecto)

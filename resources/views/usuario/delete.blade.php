@@ -1,7 +1,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <div class="modal" id="modal-eliminar-{{$reg->id}}" role="dialog" aria-labelledby="exampleModalLabel">
+=======
+<div class="modal" id="modal-eliminar-{{  $reg->id }}" role="dialog" aria-labelledby="exampleModalLabel">
+>>>>>>> 2958d9e (Se actualizo el proyecto)
     <div class="modal-dialog">
         <div class="modal-content bg-danger text-white">
             <form action="{{route('usuarios.destroy', $reg->id)}}" method="post">
@@ -20,16 +24,20 @@
 >>>>>>> c34d9cb (Se agrego el modulo o la funcion de delete)
     <div class="modal-dialog">
         <div class="modal-content bg-danger">
-            <form action="{{route('usuarios.destroy', $reg->id)}}" method="post">
+            <form action="{{ route('usuarios.destroy', $reg->id) }}" method="post">
                 @csrf
                 @method('DELETE')
+<<<<<<< HEAD
 
 >>>>>>> 3f907fb (Se actualizo el proyecto para estar al dia)
+=======
+>>>>>>> 2958d9e (Se actualizo el proyecto)
                 <div class="modal-header">
                     <h4>Eliminar registro</h4>
                 </div>
 
                 <div class="modal-body">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     <p>¿Está seguro de eliminar este registro de {{$reg->name}}?</p>
@@ -46,6 +54,9 @@
 =======
                     ¿Usted desea eliminar el registro de {{$reg->name}}?
 >>>>>>> c34d9cb (Se agrego el modulo o la funcion de delete)
+=======
+                    ¿Usted desea eliminar el registro de {{$reg->name}} ?
+>>>>>>> 2958d9e (Se actualizo el proyecto)
                 </div>
 
                 <div class="modal-footer">

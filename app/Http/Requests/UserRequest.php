@@ -68,4 +68,7 @@ class UserRequest extends FormRequest
         ];
     }
 }
+<<<<<<< HEAD
 >>>>>>> df9aafc (Se arreglo los errores de la actualicion)
+=======
+>>>>>>> 2958d9e (Se actualizo el proyecto)

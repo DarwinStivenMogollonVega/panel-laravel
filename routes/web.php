@@ -23,6 +23,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Auth;
 <<<<<<< HEAD
 >>>>>>> 1ac5a25 (Se agrego las rutas privadas, y se agrego el modulo de dashboard)
@@ -34,6 +35,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Auth;
 >>>>>>> 1b5379f (Rutas)
 =======
+=======
+>>>>>>> 2958d9e (Se actualizo el proyecto)
 use App\Http\Controllers\RoleController;
 >>>>>>> 8389d7b (Se agrego el controlador de Roles y se agrego la ruta)
 
@@ -119,13 +122,11 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('usuarios', UserController::class);
     Route::resource('roles', RoleController::class);
     Route::patch('usuarios/{usuario}/toggle', [UserController::class, 'toggleStatus'])->name('usuarios.toggle');
-    Route::get('dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('dashboard', function () { return view('dashboard');})->name('dashboard');
     //segunda parte logout
-    Route::post('logout', function () {
-        Auth::logout();
-        return redirect('/login');
+    Route::post('logout', function (){
+     Auth::logout();
+     return redirect('/login');
     })->name('logout');
 });
 
@@ -137,12 +138,14 @@ Route::middleware('guest')->group(function(){
 >>>>>>> 1ac5a25 (Se agrego las rutas privadas, y se agrego el modulo de dashboard)
 =======
 Route::middleware('guest')->group(function () {
-    Route::get('login', function () {
-        return view('autenticacion.login');
-    })->name('login');
+    Route::get('login', function () { return view('autenticacion.login');})->name('login');
     Route::post('login', [AuthController::class, 'login'])->name('login.post');
+<<<<<<< HEAD
 });
 <<<<<<< HEAD
 >>>>>>> f43cbde (Se actualizó el proyecto)
 =======
 >>>>>>> 3197f29 (Se actualizó y arreglo rutas)
+=======
+});
+>>>>>>> 2958d9e (Se actualizo el proyecto)

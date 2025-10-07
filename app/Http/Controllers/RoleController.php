@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
@@ -25,6 +26,9 @@ class RoleController extends Controller
         return view('role.index', compact('registros', 'texto'));
 =======
 use App\Models\User;
+=======
+
+>>>>>>> 2958d9e (Se actualizo el proyecto)
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
@@ -37,6 +41,7 @@ class RoleController extends Controller
     public function index(Request $request)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         //
 >>>>>>> 8389d7b (Se agrego el controlador de Roles y se agrego la ruta)
 =======
@@ -46,6 +51,15 @@ class RoleController extends Controller
         ->paginate(5);
         return view('role.index', compact('registros', 'texto'));
 >>>>>>> 5e79dd8 (Se agrego casi al 100% el CRUD de rol)
+=======
+        $texto = $request->input('texto'); // variable del texto de busqueda
+        $registros = Role::with('permissions')->where('name', 'like', "%{$texto}%")
+            ->orderBy('id', 'desc')
+            ->paginate(2);
+
+        return view('role.index', compact('registros', 'texto'));
+
+>>>>>>> 2958d9e (Se actualizo el proyecto)
     }
 
     /**
@@ -53,6 +67,7 @@ class RoleController extends Controller
      */
     public function create()
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         $this->authorize('rol-create');
@@ -66,6 +81,11 @@ class RoleController extends Controller
         $permisions=Permission::all();
         return view('role.action', compact('permisions'));
 >>>>>>> 5e79dd8 (Se agrego casi al 100% el CRUD de rol)
+=======
+        $permissions = Permission::all();
+
+        return view('role.action', compact('permissions'));
+>>>>>>> 2958d9e (Se actualizo el proyecto)
     }
 
     /**
@@ -90,14 +110,18 @@ class RoleController extends Controller
 >>>>>>> 8389d7b (Se agrego el controlador de Roles y se agrego la ruta)
 =======
         $request->validate([
-            'name'=>'required|unique:roles,name',
-            'permissions'=>'required|array',
+            'name' => 'required|unique:roles,name',
+            'permissions' => 'required|array',
         ]);
-        $registro=Role::create(['name'=> $request->name]);
+        $registro = Role::create(['name' => $request->name]);
         $registro->syncPermissions($request->permissions);
 
+<<<<<<< HEAD
         return redirect()->route('roles.index')->with('mesaje','Rol'.$registro->name.' Creado satisfactoriamente');
 >>>>>>> 5e79dd8 (Se agrego casi al 100% el CRUD de rol)
+=======
+        return redirect()->route('roles.index')->with('mensaje', 'Rol '.$registro->name.' creado satisfactoriamente');
+>>>>>>> 2958d9e (Se actualizo el proyecto)
     }
 
     /**
@@ -115,11 +139,15 @@ class RoleController extends Controller
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         $this->authorize('rol-edit');
+=======
+>>>>>>> 2958d9e (Se actualizo el proyecto)
         $registro = Role::findOrFail($id);
         $permissions = Permission::all();
 
         return view('role.action', compact('registro', 'permissions'));
+<<<<<<< HEAD
 =======
         //
 >>>>>>> 8389d7b (Se agrego el controlador de Roles y se agrego la ruta)
@@ -128,6 +156,8 @@ class RoleController extends Controller
         $permisions=Permission::all();
         return view('role.action',compact('registro', 'permissions'));
 >>>>>>> 5e79dd8 (Se agrego casi al 100% el CRUD de rol)
+=======
+>>>>>>> 2958d9e (Se actualizo el proyecto)
     }
 
     /**
@@ -135,6 +165,7 @@ class RoleController extends Controller
      */
     public function update(Request $request, string $id)
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         $this->authorize('rol-edit');
@@ -152,14 +183,20 @@ class RoleController extends Controller
 >>>>>>> 8389d7b (Se agrego el controlador de Roles y se agrego la ruta)
 =======
         $registro =Role::findOrFail($id);
+=======
+        $registro = Role::findOrFail($id);
+>>>>>>> 2958d9e (Se actualizo el proyecto)
         $request->validate([
-            'name'=>'required|unique:roles,name'.$registro->id,
-            'permissions'=>'required|array',
+            'name' => 'required|unique:roles,name'.$registro->id,
+            'permissions' => 'required|array',
         ]);
-        $registro->update(['name'=> $request->name]);
+        $registro->update(['name' => $request->name]);
         $registro->syncPermissions($request->permissions);
+<<<<<<< HEAD
 
 >>>>>>> 5e79dd8 (Se agrego casi al 100% el CRUD de rol)
+=======
+>>>>>>> 2958d9e (Se actualizo el proyecto)
     }
 
     /**
@@ -182,8 +219,12 @@ class RoleController extends Controller
         $registro = Role::findOrFail($id);
         $registro->delete();
 
+<<<<<<< HEAD
         return redirect()->route('roles.index')->with('mensaje', 'Rol eliminado correctamente');
 >>>>>>> 5e79dd8 (Se agrego casi al 100% el CRUD de rol)
+=======
+        return redirect()->route('roles.index')->with('mensaje', $registro->name.' eliminado satisfactoriamente.');
+>>>>>>> 2958d9e (Se actualizo el proyecto)
     }
 }
 >>>>>>> 8389d7b (Se agrego el controlador de Roles y se agrego la ruta)
