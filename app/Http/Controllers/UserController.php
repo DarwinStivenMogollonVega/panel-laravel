@@ -213,8 +213,19 @@ class UserController extends Controller
          $registro->name.' Fue eliminado satisfactoriamente');
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 >>>>>>> dba1577 (Se agrego la migracion de activo a users, se agrego paguinacion, y se eliminaron las rutas iniciales de prueba.)
 =======
 }
 >>>>>>> df9aafc (Se arreglo los errores de la actualicion)
+=======
+
+    public function toggleStatus(User $usuario){
+        $usuario->activo=!$usuario->activo;
+        $usuario->save();
+        return redirect()->route('usuarios.index') ->with('mensaje', 'El Estado del Usuario fue actualizado satisfactoriamente');
+
+    }
+}
+>>>>>>> f19c625 (Se agrego el boton para actualziar el estado de los usuarios)

@@ -25,6 +25,7 @@ Route::get('/', function () {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // // Route::get('/app', function () {
 // //     return view('plantilla.app');
 
@@ -85,3 +86,8 @@ route::resource('usuario', UserController::class);
 =======
 Route::resource('usuarios', UserController::class);
 >>>>>>> 3f907fb (Se actualizo el proyecto para estar al dia)
+=======
+Route::resource('usuarios', UserController::class);
+
+Route::patch('usuarios/{usuario}/toggle', [UserController::class, 'toggleStatus'])->name('usuarios.toggle');
+>>>>>>> f19c625 (Se agrego el boton para actualziar el estado de los usuarios)
