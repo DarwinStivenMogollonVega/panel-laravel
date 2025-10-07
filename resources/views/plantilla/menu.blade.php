@@ -56,13 +56,17 @@
                     <a href="{{route('dashboard')}}" class="nav-link" id="mnuDashboard">
                         <i class="nav-icon bi bi-speedometer"></i>
                         <p>
-                            Dashboard
+                            Panel de Control
                         </p>
                     </a>
                 </li>
                 @canany(['user-list', 'rol-list'])
+<<<<<<< HEAD
                 <li class="nav-item" id="mnuSeguridad">
 >>>>>>> edc20ff (Se agregaron roles al index de usaurio, le dimos permisos de can a admin y cliente y ahroa cliente no puede ver seguridad)
+=======
+                <li class="nav-item" id="menuSeguridad">
+>>>>>>> 5cfa32a (Se agregaron la vista del error 403, se agrego un nuevo apartado para asignar rol en usaurios)
                     <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-speedometer"></i>
                         <p>

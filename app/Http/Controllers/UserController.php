@@ -9,7 +9,13 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Spatie\Permission\Models\Role;
+=======
+use Spatie\Permission\Models\Role;
+
+
+>>>>>>> 5cfa32a (Se agregaron la vista del error 403, se agrego un nuevo apartado para asignar rol en usaurios)
 
 class UserController extends Controller
 {
@@ -59,7 +65,7 @@ class UserController extends Controller
         $this->authorize('user-list');
 >>>>>>> ba9fff8 (permisos de los roles y sus vistas)
         $texto =$request->input('texto');
-        $registros=User::where('name','like','%'.$texto.'%')
+        $registros=User::with('roles')->where('name','like','%'.$texto.'%')
             ->orWhere('email','like','%'.$texto.'%')
             ->orderBy('id','desc')
             ->paginate(10);
@@ -79,6 +85,7 @@ class UserController extends Controller
         $this->authorize('user-create');
         $roles=Role::all();
         return view('usuario.action', compact('roles'));
+<<<<<<< HEAD
 =======
         //
 >>>>>>> dba1577 (Se agrego la migracion de activo a users, se agrego paguinacion, y se eliminaron las rutas iniciales de prueba.)
@@ -88,6 +95,8 @@ class UserController extends Controller
 >>>>>>> ba9fff8 (permisos de los roles y sus vistas)
         return view('usuario.action');
 >>>>>>> 3f907fb (Se actualizo el proyecto para estar al dia)
+=======
+>>>>>>> 5cfa32a (Se agregaron la vista del error 403, se agrego un nuevo apartado para asignar rol en usaurios)
     }
 
     /**
@@ -123,9 +132,14 @@ class UserController extends Controller
         $registro->activo=$request->input('activo');
         $registro->save();
 <<<<<<< HEAD
+<<<<<<< HEAD
         return redirect()->route('usuarios.index')->with('mensaje','registro');
 >>>>>>> df9aafc (Se arreglo los errores de la actualicion)
 =======
+=======
+
+        $registro->assignRole([$request->input('role')]);
+>>>>>>> 5cfa32a (Se agregaron la vista del error 403, se agrego un nuevo apartado para asignar rol en usaurios)
         return redirect()->route('usuarios.index')->with('mensaje','Registro '.$registro->name. ' agregado correctamente');
 >>>>>>> edc20ff (Se agregaron roles al index de usaurio, le dimos permisos de can a admin y cliente y ahroa cliente no puede ver seguridad)
     }
@@ -161,11 +175,16 @@ class UserController extends Controller
         $this->authorize('user-edit');
         $registro=User::findOrFail($id);
 <<<<<<< HEAD
+<<<<<<< HEAD
         return view('usuario.action',compact('registro'));
 >>>>>>> 776adef (Se agrego el modulo de update aun falta lo de contraseña xd)
 =======
         return view('usuario.action', compact('registro'));
 >>>>>>> 2958d9e (Se actualizo el proyecto)
+=======
+        $roles=Role::all();
+        return view('usuario.action', compact('registro', 'roles'));
+>>>>>>> 5cfa32a (Se agregaron la vista del error 403, se agrego un nuevo apartado para asignar rol en usaurios)
     }
 
     /**
@@ -202,6 +221,7 @@ class UserController extends Controller
         $registro->save();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         return redirect()->route('usuarios.index')->with('mensaje','registro'
         .$registro->name.'Actualizado satisfactoriamente');
 
@@ -211,6 +231,9 @@ class UserController extends Controller
         return redirect()->route('usuarios.index')->with('mensaje','registro'.$registro->name.' Actualizado satisfatoriamente ' );
 >>>>>>> 2958d9e (Se actualizo el proyecto)
 =======
+=======
+        $registro->assignRole([$request->input('role')]);
+>>>>>>> 5cfa32a (Se agregaron la vista del error 403, se agrego un nuevo apartado para asignar rol en usaurios)
         return redirect()->route('usuarios.index')->with('mensaje','Registro'.$registro->name.' actualizado satisfatoriamente ' );
 >>>>>>> edc20ff (Se agregaron roles al index de usaurio, le dimos permisos de can a admin y cliente y ahroa cliente no puede ver seguridad)
     }

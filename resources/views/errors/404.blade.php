@@ -1,3 +1,4 @@
+
 @extends('plantilla.app')
 @section('contenido')
 <<<<<<< HEAD
