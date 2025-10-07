@@ -195,7 +195,7 @@
                                             @foreach ($registros as $reg)
                                                 <tr>
                                                     <td>
-                                                        <a href="#" class="btn btn-warning btn-sm">
+                                                        <a href="{{ route('usuarios.edit', $reg->id) }}" class="btn btn-warning btn-sm">
                                                             <i class="bi bi-pencil-fill"></i>
                                                         </a>
                                                         <button class="btn btn-danger btn-sm" data-bs-toggle="modal"
@@ -233,6 +233,7 @@
         <!--end::Container-->
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <!--end::Container-->
 </div>
 @endsection
@@ -240,3 +241,6 @@
 =======
 @endsection
 >>>>>>> 3f907fb (Se actualizo el proyecto para estar al dia)
+=======
+@endsection
+>>>>>>> df9aafc (Se arreglo los errores de la actualicion)

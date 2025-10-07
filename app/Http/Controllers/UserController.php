@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 use App\Http\Requests\UserRequest;
@@ -13,8 +14,12 @@ class UserController extends Controller
 {
     use AuthorizesRequests;
 =======
+=======
+use App\Http\Requests\UserRequest;
+>>>>>>> df9aafc (Se arreglo los errores de la actualicion)
 use App\Models\User;
 use Illuminate\Http\Request;
+
 
 class UserController extends Controller
 {
@@ -46,7 +51,7 @@ class UserController extends Controller
         $registros=User::where('name','like','%'.$texto.'%')
             ->orWhere('email','like','%'.$texto.'%')
             ->orderBy('id','desc')
-            ->paginate(1);
+            ->paginate(10);
             return view('usuario.index',compact('registros','texto'));
 
 >>>>>>> 3f907fb (Se actualizo el proyecto para estar al dia)
@@ -74,6 +79,7 @@ class UserController extends Controller
      * Store a newly created resource in storage.
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function store(UserRequest $request)
     {
         $this->authorize('user-edit');
@@ -91,6 +97,17 @@ class UserController extends Controller
     {
         //
 >>>>>>> dba1577 (Se agrego la migracion de activo a users, se agrego paguinacion, y se eliminaron las rutas iniciales de prueba.)
+=======
+    public function store(UserRequest $request)
+    {
+        $registro=new User();
+        $registro->name=$request->input('name');
+        $registro->email=$request->input('email');
+        $registro->password=bcrypt($request->input('password'));
+        $registro->activo=$request->input('activo');
+        $registro->save();
+        return redirect()->route('usuarios.index')->with('mensaje','registro');
+>>>>>>> df9aafc (Se arreglo los errores de la actualicion)
     }
 
     /**
@@ -166,5 +183,9 @@ class UserController extends Controller
     {
         //
     }
+<<<<<<< HEAD
 }
 >>>>>>> dba1577 (Se agrego la migracion de activo a users, se agrego paguinacion, y se eliminaron las rutas iniciales de prueba.)
+=======
+}
+>>>>>>> df9aafc (Se arreglo los errores de la actualicion)
