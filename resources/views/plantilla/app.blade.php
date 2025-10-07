@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <!--begin::Head-->
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -158,6 +158,7 @@
         <!--begin::App Content-->
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       @yield('contenido')
           <!--begin::Container-->
           <div class="container-fluid">
@@ -175,6 +176,9 @@
 =======
 >>>>>>> 3f907fb (Se actualizo el proyecto para estar al dia)
         
+=======
+
+>>>>>>> ba9fff8 (permisos de los roles y sus vistas)
         @yield('contenido')
 
         <!--end::App Content-->

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthController;
@@ -19,6 +20,9 @@ use  App\Http\Controllers\UserController;
 use App\Http\Controllers\UserController;
 =======
 use Illuminate\Support\Facades\DB;
+=======
+use Illuminate\Support\Facades\Auth;
+>>>>>>> ba9fff8 (permisos de los roles y sus vistas)
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 <<<<<<< HEAD
@@ -38,7 +42,12 @@ use Illuminate\Support\Facades\Auth;
 =======
 >>>>>>> 2958d9e (Se actualizo el proyecto)
 use App\Http\Controllers\RoleController;
+<<<<<<< HEAD
 >>>>>>> 8389d7b (Se agrego el controlador de Roles y se agrego la ruta)
+=======
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+
+>>>>>>> ba9fff8 (permisos de los roles y sus vistas)
 
 Route::get('/', function () {
     return view('welcome');
@@ -141,6 +150,7 @@ Route::middleware('guest')->group(function () {
     Route::get('login', function () { return view('autenticacion.login');})->name('login');
     Route::post('login', [AuthController::class, 'login'])->name('login.post');
 <<<<<<< HEAD
+<<<<<<< HEAD
 });
 <<<<<<< HEAD
 >>>>>>> f43cbde (Se actualizó el proyecto)
@@ -149,3 +159,6 @@ Route::middleware('guest')->group(function () {
 =======
 });
 >>>>>>> 2958d9e (Se actualizo el proyecto)
+=======
+});
+>>>>>>> ba9fff8 (permisos de los roles y sus vistas)

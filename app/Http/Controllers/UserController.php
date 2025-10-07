@@ -8,6 +8,7 @@ use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+<<<<<<< HEAD
 use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
@@ -19,16 +20,23 @@ use App\Http\Requests\UserRequest;
 >>>>>>> df9aafc (Se arreglo los errores de la actualicion)
 use App\Models\User;
 use Illuminate\Http\Request;
+=======
+>>>>>>> ba9fff8 (permisos de los roles y sus vistas)
 
 
 class UserController extends Controller
 {
+<<<<<<< HEAD
 >>>>>>> dba1577 (Se agrego la migracion de activo a users, se agrego paguinacion, y se eliminaron las rutas iniciales de prueba.)
+=======
+    use AuthorizesRequests;
+>>>>>>> ba9fff8 (permisos de los roles y sus vistas)
     /**
      * Display a listing of the resource.
      */
     public function index(Request $request)
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         $this->authorize('user-list');
@@ -47,6 +55,9 @@ class UserController extends Controller
             return view('usuario.index', compact('registros','texto'));
 >>>>>>> dba1577 (Se agrego la migracion de activo a users, se agrego paguinacion, y se eliminaron las rutas iniciales de prueba.)
 =======
+=======
+        $this->authorize('user-list');
+>>>>>>> ba9fff8 (permisos de los roles y sus vistas)
         $texto =$request->input('texto');
         $registros=User::where('name','like','%'.$texto.'%')
             ->orWhere('email','like','%'.$texto.'%')
@@ -64,6 +75,7 @@ class UserController extends Controller
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         $this->authorize('user-create');
         $roles=Role::all();
         return view('usuario.action', compact('roles'));
@@ -71,6 +83,9 @@ class UserController extends Controller
         //
 >>>>>>> dba1577 (Se agrego la migracion de activo a users, se agrego paguinacion, y se eliminaron las rutas iniciales de prueba.)
 =======
+=======
+        $this->authorize('user-create');
+>>>>>>> ba9fff8 (permisos de los roles y sus vistas)
         return view('usuario.action');
 >>>>>>> 3f907fb (Se actualizo el proyecto para estar al dia)
     }
@@ -100,6 +115,7 @@ class UserController extends Controller
 =======
     public function store(UserRequest $request)
     {
+        $this->authorize('user-create');
         $registro=new User();
         $registro->name=$request->input('name');
         $registro->email=$request->input('email');
@@ -138,6 +154,7 @@ class UserController extends Controller
 =======
     public function edit($id)
     {
+        $this->authorize('user-edit');
         $registro=User::findOrFail($id);
 <<<<<<< HEAD
         return view('usuario.action',compact('registro'));
@@ -172,6 +189,7 @@ class UserController extends Controller
 =======
     public function update(UserRequest $request, $id)
     {
+        $this->authorize('user-edit');
         $registro=User::findOrFail($id);
         $registro->name=$request->input('name');
         $registro->email=$request->input('email');
@@ -198,6 +216,7 @@ class UserController extends Controller
     public function destroy($id)
     {
         $this->authorize('user-delete');
+<<<<<<< HEAD
         $registro=User::findOrFail($id);
         $registro->delete();
         return redirect()->route('usuarios.index')->with('mensaje', $registro->name. ' <Eliminado Satisfactoriamente.');
@@ -219,6 +238,8 @@ class UserController extends Controller
     public function destroy($id)
 >>>>>>> 2958d9e (Se actualizo el proyecto)
     {
+=======
+>>>>>>> ba9fff8 (permisos de los roles y sus vistas)
         $registro=User::findOrFail($id);
         $registro->delete();
         return redirect()->route('usuarios.index')->with('mensaje', $registro->name. ' eliminado satisfatoriamente.');
@@ -232,7 +253,9 @@ class UserController extends Controller
 >>>>>>> df9aafc (Se arreglo los errores de la actualicion)
 =======
 
-    public function toggleStatus(User $usuario){
+    public function toggleStatus(User $usuario)
+    {
+        $this->authorize('user-activate');
         $usuario->activo = !$usuario->activo;
         $usuario->save();
         return redirect()->route('usuarios.index')->with('mensaje', 'El estado del usuario fue actualizado satisfactoriamente');
