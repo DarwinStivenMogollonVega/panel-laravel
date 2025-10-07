@@ -23,6 +23,7 @@ class UserRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
+<<<<<<< HEAD
             'email' => 'required|email|unique:users,email,' .$this->route('usuario'),
             'password' => 'required|min:8',
         ];
@@ -42,4 +43,10 @@ class UserRequest extends FormRequest
             'password.min' => 'La contraseña debe tener al menos 8 caracteres.',
         ];
     }
+=======
+            'email' => 'required|email|unique:users,email,' . $this->route('usuario'),
+            'password' => 'required|min:8',
+        ];
+    }
+>>>>>>> 3f907fb (Se actualizo el proyecto para estar al dia)
 }

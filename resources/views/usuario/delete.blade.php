@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <div class="modal" id="modal-eliminar-{{$reg->id}}" role="dialog" aria-labelledby="exampleModalLabel">
     <div class="modal-dialog">
         <div class="modal-content bg-danger text-white">
@@ -11,9 +12,17 @@
         <div class="modal-content bg-danger">
             <form action="" method="post">
 >>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
+=======
+<div class="modal" id="modal-eliminar-01" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content bg-danger">
+            <form action="" method="post">
+
+>>>>>>> 3f907fb (Se actualizo el proyecto para estar al dia)
                 <div class="modal-header">
                     <h4>Eliminar registro</h4>
                 </div>
+
                 <div class="modal-body">
 <<<<<<< HEAD
                     <p>¿Está seguro de eliminar este registro de {{$reg->name}}?</p>
@@ -28,16 +37,19 @@
 =======
                     ¿Usted desea eliminar el registro xyz?
                 </div>
+
                 <div class="modal-footer">
-                    <button type="sudmit" class="btn btn-outline-light">Eliminar</button>
+                    <button type="submit" class="btn btn-outline-light">Eliminar</button>
                     <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cerrar</button>
-
                 </div>
+
             </form>
-
-
         </div>
     </div>
+<<<<<<< HEAD
 
 >>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
 </div>
+=======
+</div>
+>>>>>>> 3f907fb (Se actualizo el proyecto para estar al dia)

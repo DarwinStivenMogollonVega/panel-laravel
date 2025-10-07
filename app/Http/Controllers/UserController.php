@@ -25,6 +25,7 @@ class UserController extends Controller
     public function index(Request $request)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         $this->authorize('user-list');
         $texto = $request->input("texto");
          $registros = User::with('roles')->where('name','like','%'.$texto.'%')
@@ -40,6 +41,15 @@ class UserController extends Controller
             ->paginate(1);
             return view('usuario.index', compact('registros','texto'));
 >>>>>>> dba1577 (Se agrego la migracion de activo a users, se agrego paguinacion, y se eliminaron las rutas iniciales de prueba.)
+=======
+        $texto =$request->input('texto');
+        $registros=User::where('name','like','%'.$texto.'%')
+            ->orWhere('email','like','%'.$texto.'%')
+            ->orderBy('id','desc')
+            ->paginate(1);
+            return view('usuario.index',compact('registros','texto'));
+
+>>>>>>> 3f907fb (Se actualizo el proyecto para estar al dia)
     }
 
     /**
@@ -48,12 +58,16 @@ class UserController extends Controller
     public function create()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         $this->authorize('user-create');
         $roles=Role::all();
         return view('usuario.action', compact('roles'));
 =======
         //
 >>>>>>> dba1577 (Se agrego la migracion de activo a users, se agrego paguinacion, y se eliminaron las rutas iniciales de prueba.)
+=======
+        return view('usuario.action');
+>>>>>>> 3f907fb (Se actualizo el proyecto para estar al dia)
     }
 
     /**

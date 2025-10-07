@@ -31,12 +31,16 @@ class User extends Authenticatable
         'password',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         'activo',
 =======
 >>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
 =======
         'activo',
 >>>>>>> dba1577 (Se agrego la migracion de activo a users, se agrego paguinacion, y se eliminaron las rutas iniciales de prueba.)
+=======
+        'activo'
+>>>>>>> 3f907fb (Se actualizo el proyecto para estar al dia)
     ];
 
     /**

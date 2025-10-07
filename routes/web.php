@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthController;
@@ -13,11 +14,16 @@ use App\Http\Controllers\RoleController;
 =======
 use  App\Http\Controllers\UserController;
 >>>>>>> dba1577 (Se agrego la migracion de activo a users, se agrego paguinacion, y se eliminaron las rutas iniciales de prueba.)
+=======
+use App\Http\Controllers\UserController;
+
+>>>>>>> 3f907fb (Se actualizo el proyecto para estar al dia)
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 // // Route::get('/app', function () {
 // //     return view('plantilla.app');
@@ -76,3 +82,6 @@ Route::post('login', [AuthController::class, 'login'])->name('login.post');
 =======
 route::resource('usuario', UserController::class);
 >>>>>>> dba1577 (Se agrego la migracion de activo a users, se agrego paguinacion, y se eliminaron las rutas iniciales de prueba.)
+=======
+Route::resource('usuarios', UserController::class);
+>>>>>>> 3f907fb (Se actualizo el proyecto para estar al dia)
