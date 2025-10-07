@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+<<<<<<< HEAD
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
@@ -22,6 +23,21 @@ class RoleController extends Controller
                             ->orderBy('id', 'desc')
                             ->paginate(10);
         return view('role.index', compact('registros', 'texto'));
+=======
+use App\Models\User;
+use Illuminate\Http\Request;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
+
+class RoleController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        //
+>>>>>>> 8389d7b (Se agrego el controlador de Roles y se agrego la ruta)
     }
 
     /**
@@ -29,10 +45,14 @@ class RoleController extends Controller
      */
     public function create()
     {
+<<<<<<< HEAD
         $this->authorize('rol-create');
         $permissions = Permission::all();
 
         return view('role.action', compact('permissions'));
+=======
+        //
+>>>>>>> 8389d7b (Se agrego el controlador de Roles y se agrego la ruta)
     }
 
     /**
@@ -40,6 +60,7 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
         $this->authorize('rol-edit');
         $request->validate([
             'name' => 'required|unique:roles,name',
@@ -50,6 +71,9 @@ class RoleController extends Controller
         $registro->syncPermissions($request->permissions);
 
         return redirect()->route('roles.index')->with('mensaje', 'Rol '.$registro->name.' creado exitosamente.');
+=======
+        //
+>>>>>>> 8389d7b (Se agrego el controlador de Roles y se agrego la ruta)
     }
 
     /**
@@ -65,11 +89,15 @@ class RoleController extends Controller
      */
     public function edit(string $id)
     {
+<<<<<<< HEAD
         $this->authorize('rol-edit');
         $registro = Role::findOrFail($id);
         $permissions = Permission::all();
 
         return view('role.action', compact('registro', 'permissions'));
+=======
+        //
+>>>>>>> 8389d7b (Se agrego el controlador de Roles y se agrego la ruta)
     }
 
     /**
@@ -77,6 +105,7 @@ class RoleController extends Controller
      */
     public function update(Request $request, string $id)
     {
+<<<<<<< HEAD
         $this->authorize('rol-edit');
         $registro = Role::findOrFail($id);
         $request->validate([
@@ -87,6 +116,9 @@ class RoleController extends Controller
         $registro->update(['name' => $request->name]);
         $registro->syncPermissions($request->permissions);
         return redirect()->route('roles.index')->with('mensaje', 'Registro '.$registro->name.' actualizado exitosamente.');
+=======
+        //
+>>>>>>> 8389d7b (Se agrego el controlador de Roles y se agrego la ruta)
     }
 
     /**
@@ -94,6 +126,7 @@ class RoleController extends Controller
      */
     public function destroy(string $id)
     {
+<<<<<<< HEAD
         $this->authorize('rol-delete');
         $registro = Role::findOrFail($id);
         $registro->delete();
@@ -101,3 +134,8 @@ class RoleController extends Controller
         return redirect()->route('roles.index')->with('mensaje', $registro->name.' eliminado exitosamente.');
     }
 }
+=======
+        //
+    }
+}
+>>>>>>> 8389d7b (Se agrego el controlador de Roles y se agrego la ruta)

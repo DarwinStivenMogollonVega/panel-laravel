@@ -24,6 +24,7 @@ use App\Http\Controllers\AuthController;
 <<<<<<< HEAD
 <<<<<<< HEAD
 use Illuminate\Support\Facades\Auth;
+<<<<<<< HEAD
 >>>>>>> 1ac5a25 (Se agrego las rutas privadas, y se agrego el modulo de dashboard)
 
 >>>>>>> 3f907fb (Se actualizo el proyecto para estar al dia)
@@ -32,6 +33,9 @@ use Illuminate\Support\Facades\Auth;
 =======
 use Illuminate\Support\Facades\Auth;
 >>>>>>> 1b5379f (Rutas)
+=======
+use App\Http\Controllers\RoleController;
+>>>>>>> 8389d7b (Se agrego el controlador de Roles y se agrego la ruta)
 
 Route::get('/', function () {
     return view('welcome');
@@ -113,6 +117,7 @@ Route::middleware(['auth'])->group(function(){
 Route::middleware(['auth'])->group(function () {
 >>>>>>> f43cbde (Se actualizó el proyecto)
     Route::resource('usuarios', UserController::class);
+    Route::resourse('roles', RoleController::class);
     Route::patch('usuarios/{usuario}/toggle', [UserController::class, 'toggleStatus'])->name('usuarios.toggle');
     Route::get('dashboard', function () {
         return view('dashboard');
