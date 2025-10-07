@@ -2,31 +2,14 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Spatie\Permission\Traits\HasRoles;
-=======
->>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
-=======
-use Spatie\Permission\Traits\HasRoles;
->>>>>>> f43cbde (Se actualizó el proyecto)
 
 class User extends Authenticatable
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
-<<<<<<< HEAD
-<<<<<<< HEAD
     use HasFactory, Notifiable, HasRoles;
-=======
-    use HasFactory, Notifiable;
->>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
-=======
-    use HasFactory, Notifiable, HasRoles;
->>>>>>> f43cbde (Se actualizó el proyecto)
 
     /**
      * The attributes that are mass assignable.
@@ -37,18 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         'activo',
-=======
->>>>>>> 3658b96 (Primer version del proyecto: Usuario, delete.)
-=======
-        'activo',
->>>>>>> dba1577 (Se agrego la migracion de activo a users, se agrego paguinacion, y se eliminaron las rutas iniciales de prueba.)
-=======
-        'activo'
->>>>>>> 3f907fb (Se actualizo el proyecto para estar al dia)
     ];
 
     /**
@@ -62,7 +34,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * Get the attributes that should be cast.
+     * The attributes that should be cast.
      *
      * @return array<string, string>
      */

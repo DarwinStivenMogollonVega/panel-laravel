@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 class UserRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
+     * Determina si el usuario está autorizado para realizar esta solicitud.
      */
     public function authorize(): bool
     {
@@ -15,61 +15,34 @@ class UserRequest extends FormRequest
     }
 
     /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     * Reglas de validación que se aplican al request.
      */
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:255',
-<<<<<<< HEAD
-            'email' => 'required|email|unique:users,email,' .$this->route('usuario'),
-            'password' => 'required|min:8',
-        ];
-    }
-    public function messages()
-    {
-        return [
-            'name.required' => 'El campo nombre es obligatorio.',
-            'name.string' => 'El campo nombre debe ser una cadena de texto.',
-            'name.max' => 'El campo nombre no debe exceder los 255 caracteres.',
-
-            'email.required' => 'El campo email es obligatorio.',
-            'email.email' => 'El campo email debe ser una dirección de correo electrónico válida.',
-            'email.unique' => 'El email ya está en uso.',
-
-            'password.required' => 'El campo contraseña es obligatorio.',
-            'password.min' => 'La contraseña debe tener al menos 8 caracteres.',
-        ];
-    }
-=======
-            'email' => 'required|email|unique:users,email,' . $this->route('usuario'),
+            'name'     => 'required|string|max:255',
+            'email'    => 'required|email|unique:users,email,' . $this->route('usuario'),
             'password' => 'required|min:8|confirmed',
         ];
     }
-<<<<<<< HEAD
->>>>>>> 3f907fb (Se actualizo el proyecto para estar al dia)
-}
-=======
 
-     public function messages(){
+    /**
+     * Mensajes personalizados para los errores de validación.
+     */
+    public function messages(): array
+    {
         return [
             'name.required' => 'El campo nombre es obligatorio.',
-            'name.string' => 'El campo nombre debe ser una cadena de texto.',
-            'name.max' => 'El campo nombre no puede superar los 255 caracteres.',
+            'name.string'   => 'El campo nombre debe ser una cadena de texto.',
+            'name.max'      => 'El campo nombre no puede superar los 255 caracteres.',
 
             'email.required' => 'El campo correo electrónico es obligatorio.',
-            'email.email' => 'Debe ingresar un correo electrónico válido.',
-            'email.unique' => 'Este correo electrónico ya esta registrado.',
+            'email.email'    => 'Debe ingresar un correo electrónico válido.',
+            'email.unique'   => 'Este correo electrónico ya está registrado.',
 
-            'password.required' => 'El campo contraseña es obligatorio.',
-            'password.min' => 'La contraseña debe tener al menos 8 caracteres.',
-            'password.confirmed'=>'Las contraseñas no coiciden'
+            'password.required'  => 'El campo contraseña es obligatorio.',
+            'password.min'       => 'La contraseña debe tener al menos 8 caracteres.',
+            'password.confirmed' => 'Las contraseñas no coinciden.',
         ];
     }
 }
-<<<<<<< HEAD
->>>>>>> df9aafc (Se arreglo los errores de la actualicion)
-=======
->>>>>>> 2958d9e (Se actualizo el proyecto)

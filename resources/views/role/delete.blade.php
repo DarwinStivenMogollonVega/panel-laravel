@@ -1,56 +1,24 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<div class="modal" id="modal-eliminar-{{ $reg->id }}" role="dialog" aria_labelledby="exampleModalLabel">
-
-<div class="modal-dialog">
-<div class="modal-content bg-danger" >
-
-    <form action="{{  route('roles.destroy', $reg->id) }}" method="post" >
-        @csrf
-        @method('DELETE')
-        <div class="modal-header">
-
-        <h1> Eliminar Registro</h1>
-
-        </div>
-        
-        <div class="modal-body">
-            ¿Usted desea eliminar el registro {{ $reg->name }}?
-        </div>
-
-        <div class="modal-footer">
-            <button type="submit" class="btn btn-outline-light" > Eliminar </button>
-            <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal"> Cerrar</button>
-        </div>
-    </form>
-</div>
-</div>
-</div>
-=======
-<div class="modal" id="modal-eliminar-{{$reg->id}}" role="dialog" aria-labelledby="exampleModalLabel">
-=======
-<div class="modal" id="modal-eliminar-{{  $reg->id }}" role="dialog" aria-labelledby="exampleModalLabel">
->>>>>>> 2958d9e (Se actualizo el proyecto)
+<div class="modal fade" id="modal-eliminar-{{ $reg->id }}" tabindex="-1" aria-labelledby="modalEliminarLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content bg-danger">
-            <form action="{{ route('roles.destroy', $reg->id) }}" method="post">
+            <form action="{{ route('roles.destroy', $reg->id) }}" method="POST">
                 @csrf
                 @method('DELETE')
+
                 <div class="modal-header">
-                    <h4>Eliminar registro</h4>
+                    <h4 class="modal-title" id="modalEliminarLabel">Eliminar Registro</h4>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
 
                 <div class="modal-body">
-                    ¿Usted desea eliminar el registro de {{$reg->name}} ?
+                    ¿Está seguro que desea eliminar el registro <strong>{{ $reg->name }}</strong>?
                 </div>
 
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-outline-light">Eliminar</button>
                     <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cerrar</button>
                 </div>
-
             </form>
         </div>
     </div>
 </div>
->>>>>>> 5e79dd8 (Se agrego casi al 100% el CRUD de rol)

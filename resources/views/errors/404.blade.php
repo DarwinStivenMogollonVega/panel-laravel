@@ -1,80 +1,36 @@
-
 @extends('plantilla.app')
+
 @section('contenido')
-<<<<<<< HEAD
 <div class="app-content">
-  <!--begin::Container-->
-  <div class="container-fluid">
-    <!--begin::Row-->
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card mb-4">
-          <div class="card-header bg-danger text-white">
-            <h3 class="card-title">Acceso no autorizado</h3>
-          </div>
-          <!-- /.card-header -->
-          <div class="card-body">
-            
+    <!--begin::Container-->
+    <div class="container-fluid">
+        <!--begin::Row-->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card mb-4">
+                    <div class="card-header bg-danger text-white">
+                        <h3 class="card-title">Acceso No Autorizado</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <p>No tienes permiso para acceder a esta sección.</p>
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer clearfix">
+                    </div>
+                </div>
+                <!-- /.card -->
             </div>
-            <!-- /.card-body -->
-            <div class="card-footer clearfix">
-              
-            </div>
-            
-          </div>
-          <!-- /.card -->
-          <!-- /.card -->
+            <!-- /.col -->
         </div>
-        <!-- /.col -->
-        <!-- /.col -->
-      </div>
-      <!--end::Row-->
+        <!--end::Row-->
     </div>
     <!--end::Container-->
-  </div>
-
-  @endsection
-
-  @push('scripts')
-<script>
-  document.getElementById('menuSeguridad').classList.add('menu-open');
-</script>
-@endpush
-=======
-    <div class="app-content">
-        <!--begin::Container-->
-        <div class="container-fluid">
-            <!--begin::Row-->
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card mb-4">
-                        <div class="card-header bg-danger text-white">
-                            <h3 class="card-title">Acceso No Autorizado</h3>
-                        </div>
-                        <!-- /.card-header -->
-                        <div class="card-body">
-
-                        </div>
-                        <!-- /.card-body -->
-                        <div class="card-footer clearfix">
-                        </div>
-                    </div>
-                    <!-- /.card -->
-
-                </div>
-                <!-- /.col -->
-
-            </div>
-            <!--end::Row-->
-        </div>
-        <!--end::Container-->
-    </div>
+</div>
 @endsection
 
 @push('scripts')
-    <script>
-        document.getElementById('menuSeguridad').classList.add('menu-open');
-    </script>
-
+<script>
+    document.getElementById('menuSeguridad').classList.add('menu-open');
+</script>
 @endpush
->>>>>>> edc20ff (Se agregaron roles al index de usaurio, le dimos permisos de can a admin y cliente y ahroa cliente no puede ver seguridad)
