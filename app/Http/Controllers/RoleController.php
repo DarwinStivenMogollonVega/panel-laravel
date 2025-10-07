@@ -34,10 +34,18 @@ class RoleController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+<<<<<<< HEAD
         //
 >>>>>>> 8389d7b (Se agrego el controlador de Roles y se agrego la ruta)
+=======
+        $texto= $request->input('texto');//variable del texto de la busqueda
+        $registros= Role::with('permissions')->where('name','like',"%{$texto}%")
+        ->orderBy('id','desc')
+        ->paginate(5);
+        return view('role.index', compact('registros', 'texto'));
+>>>>>>> 5e79dd8 (Se agrego casi al 100% el CRUD de rol)
     }
 
     /**
@@ -46,6 +54,7 @@ class RoleController extends Controller
     public function create()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         $this->authorize('rol-create');
         $permissions = Permission::all();
 
@@ -53,6 +62,10 @@ class RoleController extends Controller
 =======
         //
 >>>>>>> 8389d7b (Se agrego el controlador de Roles y se agrego la ruta)
+=======
+        $permisions=Permission::all();
+        return view('role.action', compact('permisions'));
+>>>>>>> 5e79dd8 (Se agrego casi al 100% el CRUD de rol)
     }
 
     /**
@@ -60,6 +73,7 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         $this->authorize('rol-edit');
         $request->validate([
@@ -74,6 +88,16 @@ class RoleController extends Controller
 =======
         //
 >>>>>>> 8389d7b (Se agrego el controlador de Roles y se agrego la ruta)
+=======
+        $request->validate([
+            'name'=>'required|unique:roles,name',
+            'permissions'=>'required|array',
+        ]);
+        $registro=Role::create(['name'=> $request->name]);
+        $registro->syncPermissions($request->permissions);
+
+        return redirect()->route('roles.index')->with('mesaje','Rol'.$registro->name.' Creado satisfactoriamente');
+>>>>>>> 5e79dd8 (Se agrego casi al 100% el CRUD de rol)
     }
 
     /**
@@ -90,6 +114,7 @@ class RoleController extends Controller
     public function edit(string $id)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         $this->authorize('rol-edit');
         $registro = Role::findOrFail($id);
         $permissions = Permission::all();
@@ -98,6 +123,11 @@ class RoleController extends Controller
 =======
         //
 >>>>>>> 8389d7b (Se agrego el controlador de Roles y se agrego la ruta)
+=======
+        $registro=Role::findOrFail($id);
+        $permisions=Permission::all();
+        return view('role.action',compact('registro', 'permissions'));
+>>>>>>> 5e79dd8 (Se agrego casi al 100% el CRUD de rol)
     }
 
     /**
@@ -105,6 +135,7 @@ class RoleController extends Controller
      */
     public function update(Request $request, string $id)
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         $this->authorize('rol-edit');
         $registro = Role::findOrFail($id);
@@ -119,6 +150,16 @@ class RoleController extends Controller
 =======
         //
 >>>>>>> 8389d7b (Se agrego el controlador de Roles y se agrego la ruta)
+=======
+        $registro =Role::findOrFail($id);
+        $request->validate([
+            'name'=>'required|unique:roles,name'.$registro->id,
+            'permissions'=>'required|array',
+        ]);
+        $registro->update(['name'=> $request->name]);
+        $registro->syncPermissions($request->permissions);
+
+>>>>>>> 5e79dd8 (Se agrego casi al 100% el CRUD de rol)
     }
 
     /**
@@ -126,6 +167,7 @@ class RoleController extends Controller
      */
     public function destroy(string $id)
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         $this->authorize('rol-delete');
         $registro = Role::findOrFail($id);
@@ -136,6 +178,12 @@ class RoleController extends Controller
 }
 =======
         //
+=======
+        $registro = Role::findOrFail($id);
+        $registro->delete();
+
+        return redirect()->route('roles.index')->with('mensaje', 'Rol eliminado correctamente');
+>>>>>>> 5e79dd8 (Se agrego casi al 100% el CRUD de rol)
     }
 }
 >>>>>>> 8389d7b (Se agrego el controlador de Roles y se agrego la ruta)
