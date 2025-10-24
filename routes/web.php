@@ -6,6 +6,8 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\Auth\PerfilController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Models\Producto;
+use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -17,6 +19,8 @@ Route::get('/', function () {
 Route::middleware(['auth'])->group(function() {
 
     Route::resource('usuarios', UserController::class);
+    Route::resource('roles', RoleController::class);
+    Route::get('productos', ProductoController::class);
     Route::patch('usuarios/{usuario}/toggle', [UserController::class, 'toggleStatus'])->name('usuarios.toggle');
 
     Route::get('dashboard', function() {
@@ -28,8 +32,6 @@ Route::middleware(['auth'])->group(function() {
         return redirect('/login');
     })->name('logout');
 });
-
-Route::resource('roles', RoleController::class);
 
 Route::middleware(['guest'])->group(function() {
 
